@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { createContext, useContext, useState, useEffect } from 'react';
 import { ThemeProvider } from 'next-themes';
 import { AnimatePresence } from 'framer-motion';
@@ -28,7 +29,7 @@ export function Providers({ children }) {
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
-      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
         <AnimatePresence mode="wait">
           {children}
         </AnimatePresence>
@@ -36,3 +37,7 @@ export function Providers({ children }) {
     </LanguageContext.Provider>
   );
 }
+
+Providers.propTypes = {
+  children: PropTypes.node.isRequired,
+};

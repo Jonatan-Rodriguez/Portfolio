@@ -93,7 +93,7 @@ export default function Home() {
   });
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 pt-24">
+    <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 py-12 pt-24">
       <motion.section 
         id="about" 
         className="mb-16"
@@ -113,7 +113,7 @@ export default function Home() {
             />
           </div>
           <div className="md:w-2/3 md:pl-8">
-            <h1 className="text-4xl font-bold mb-4">Your Name</h1>
+            <h1 className="text-4xl font-bold mb-4">Rodriguez Jonatan</h1>
             <h2 className="text-2xl text-indigo-600 dark:text-indigo-400 mb-4">Full Stack Developer</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300">
               {content[language].about.description}

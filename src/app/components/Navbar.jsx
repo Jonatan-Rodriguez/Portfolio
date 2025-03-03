@@ -20,8 +20,8 @@ const Navbar = () => {
   ];
 
   const menuVariants = {
-    closed: { opacity: 0, x: "-100%" },
-    open: { opacity: 1, x: 0 }
+    closed: { opacity: 0, x: '-100%' },
+    open: { opacity: 1, x: 0 },
   };
 
   return (
@@ -29,7 +29,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <Link href="/" className="text-xl font-bold text-indigo-600 dark:text-indigo-400">
+            <Link to="/" className="text-xl font-bold text-indigo-600 dark:text-indigo-400">
               Your Name
             </Link>
           </div>
@@ -38,7 +38,7 @@ const Navbar = () => {
               {navItems.map((item) => (
                 <Link
                   key={item.href}
-                  href={item.href}
+                  to={item.href}
                   className="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 px-3 py-2 transition-colors duration-200"
                 >
                   {language === 'en' ? item.en : item.es}
@@ -92,7 +92,7 @@ const Navbar = () => {
               {navItems.map((item) => (
                 <Link
                   key={item.href}
-                  href={item.href}
+                  to={item.href}
                   className="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 block px-3 py-2"
                   onClick={toggleMenu}
                 >
