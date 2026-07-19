@@ -1,7 +1,6 @@
 import { Hand, Handshake, Globe, Download } from 'lucide-react'
 import { FaGithub } from 'react-icons/fa'
 import { skills } from '../data/skills'
-import { education } from '../data/education'
 import { SkillBadge } from '../components/about/SkillBadge'
 
 export function About() {
@@ -64,25 +63,6 @@ export function About() {
                 <FaGithub size={24} className="text-ink dark:text-paper" />
               </div>
             </a>
-          </div>
-        </div>
-
-        <div className="mt-28 max-w-2xl mx-auto">
-          <p className="text-accent font-semibold text-sm tracking-wide uppercase text-center mb-10">Formación</p>
-          <div className="flex flex-col gap-8">
-            {education.map((item) => (
-              <div
-                key={item.title}
-                className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 border-b border-ink/10 dark:border-paper/10 pb-6"
-              >
-                <div>
-                  <p className="font-display font-bold text-lg">{item.title}</p>
-                  <p className="text-sm text-ink/70 dark:text-paper/70">{item.place}</p>
-                  {item.detail && <p className="text-sm text-ink/50 dark:text-paper/50 mt-1">{item.detail}</p>}
-                </div>
-                <p className="text-sm font-medium text-ink/60 dark:text-paper/60 shrink-0">{item.period}</p>
-              </div>
-            ))}
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import { ScrollProgress } from './components/layout/ScrollProgress'
 import { Header } from './components/layout/Header'
 import { Home } from './sections/Home'
 import { About } from './sections/About'
+import { Education } from './sections/Education'
 import { Work } from './sections/Work'
 import { Experience } from './sections/Experience'
 
@@ -16,6 +17,7 @@ function App() {
       <main>
         <Home />
         <About />
+        <Education />
         <Work />
         <Experience />
       </main>
