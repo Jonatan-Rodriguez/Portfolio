@@ -7,6 +7,8 @@ import { About } from './sections/About'
 import { Education } from './sections/Education'
 import { Work } from './sections/Work'
 import { Experience } from './sections/Experience'
+import { Contact } from './sections/Contact'
+import { Footer } from './components/layout/Footer'
 
 function App() {
   return (
@@ -20,7 +22,9 @@ function App() {
         <Education />
         <Work />
         <Experience />
+        <Contact />
       </main>
+      <Footer />
     </ThemeProvider>
   )
 }
