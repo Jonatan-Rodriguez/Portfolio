@@ -7,7 +7,7 @@ export function Hero() {
   const [isAlterEgo, setIsAlterEgo] = useState(false)
 
   return (
-    <section id="top" className="pt-32 pb-16 sm:pb-24 px-6 h-screen">
+    <section id="top" className="pt-32 pb-8 sm:pb-6 px-6 min-h-screen">
       <div className="relative max-w-7xl mx-auto flex flex-col justify-center items-baseline h-full">
         <div className="flex items-center gap-5 sm:gap-5 mb-2 ">
           <h1 className="font-display font-semibold text-accent text-[18vw] sm:text-8xl md:text-9xl lg:text-[10.5rem] leading-none">

@@ -5,22 +5,13 @@ import { SkillBadge } from '../components/about/SkillBadge'
 
 export function About() {
   return (
-    <section id="about" className="px-6 py-24 sm:py-32">
-      <div className="max-w-5xl mx-auto">
-        <div className="flex flex-wrap items-end justify-between gap-6 mb-20">
-          <div>
+    <section id="about" className="pt-32 pb-8 sm:pb-6 px-6 min-h-screen">
+      <div className="max-w-5xl mx-auto flex flex-col justify-center items-center">
+        <div className="flex flex-wrap items-end justify-center gap-6 mb-20">
+          <div className="flex flex-col items-center gap-2">
             <p className="text-accent font-semibold text-sm tracking-wide uppercase">Who I am</p>
             <h2 className="font-display font-bold text-4xl sm:text-5xl mt-2">About</h2>
           </div>
-
-          <a
-            href="../assets/cv-jonatan-rodriguez.pdf"
-            download
-            className="flex items-center gap-2 rounded-full bg-accent text-paper px-6 py-3 text-sm font-semibold hover:opacity-90 transition-opacity"
-          >
-            <Download size={16} strokeWidth={2.5} />
-            Descargar CV
-          </a>
         </div>
 
         <p className="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-snug text-center">
@@ -42,6 +33,17 @@ export function About() {
           <span className="text-accent">Node.js</span> y <span className="text-accent">PostgreSQL</span>{' '}
           <Globe size={34} strokeWidth={2} className="inline align-middle text-ink dark:text-paper -translate-y-1" />.
         </p>
+
+        <div className="mt-12 text-center max-w-60 ">
+          <a
+            href="../assets/cv-jonatan-rodriguez.pdf"
+            download
+            className="flex items-center gap-2 rounded-full bg-accent text-paper px-6 py-3 text-sm font-semibold hover:opacity-90 transition-opacity"
+          >
+            <Download size={16} strokeWidth={2.5} />
+            Descargar CV
+          </a>
+        </div>
 
         <div className="mt-24">
           <p className="text-center font-semibold text-sm mb-8">Expertise in Tools</p>
