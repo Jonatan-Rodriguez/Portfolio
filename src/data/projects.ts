@@ -13,7 +13,7 @@ export const projects: Project[] = [
     title: 'CRUD Rick and Morty',
     year: '2024',
     color: '#e3e1d5',
-    tech: ['React', 'Redux', 'Node.js', 'Express', 'PostgreSQL', 'Sequelize', 'Styled Components'],
+    tech: ['React', 'Redux', 'Node.js', 'Express', 'PostgreSQL', 'Sequelize'],
     image: 'https://jonatan-rodriguez.netlify.app/assets/img/rick-and-morty.png',
     demoUrl: 'https://rick-and-morty-front-8fqy.onrender.com',
     repoUrl: 'https://github.com/Jonatan-Rodriguez/rick_and_morty',

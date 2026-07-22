@@ -1,52 +1,59 @@
-import { Hand, Handshake, Globe, Download } from 'lucide-react'
+import { Hand, Handshake, Globe } from 'lucide-react'
 import { FaGithub } from 'react-icons/fa'
 import { skills } from '../data/skills'
 import { SkillBadge } from '../components/about/SkillBadge'
+import cvFile from '../assets/pdf/cv-jonatan-rodriguez.pdf';
 
 export function About() {
   return (
-    <section id="about" className="pt-32 pb-8 sm:pb-6 px-6 min-h-screen">
-      <div className="max-w-5xl mx-auto flex flex-col justify-center items-center">
-        <div className="flex flex-wrap items-end justify-center gap-6 mb-20">
+    <section id="about" className="min-h-screen w-full flex flex-col justify-center py-16">
+      
+      <div className="w-[92%] sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] mx-auto flex flex-col justify-center items-center">
+        
+        <div className="flex flex-wrap items-end justify-center gap-6 mb-12 sm:mb-20">
           <div className="flex flex-col items-center gap-2">
-            <p className="text-accent font-semibold text-sm tracking-wide uppercase">Who I am</p>
-            <h2 className="font-display font-bold text-4xl sm:text-5xl mt-2">About</h2>
+            <p className="text-accent font-semibold text-sm tracking-wide uppercase">Quién soy</p>
+            <h2 className="font-display font-bold text-4xl sm:text-5xl mt-2">Acerca de mí</h2>
           </div>
         </div>
 
-        <p className="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-snug text-center">
+        <p className="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-snug lg:leading-tight text-center max-w-5xl mx-auto text-balance">
           Hola, <span className="text-accent">soy</span>{' '}
           <img
             src="/img/profile.jpg"
             alt="Jonatan Rodriguez"
-            className="inline-block w-11 h-11 sm:w-14 sm:h-14 rounded-full object-cover align-middle -translate-y-1"
+            className="inline-block w-11 h-11 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-full object-cover align-middle -translate-y-1 sm:-translate-y-2"
           />{' '}
           <span className="text-accent">Jonatan</span>{' '}
-          <Hand size={34} strokeWidth={2} className="inline align-middle text-ink dark:text-paper -translate-y-1" />
+          <Hand size={40} strokeWidth={2} className="inline align-middle text-ink dark:text-paper -translate-y-1 sm:-translate-y-2" />
           , full-stack developer desde{' '}
-          <span className="inline-flex items-center rounded-full border border-ink/15 dark:border-paper/20 px-3 py-0.5 text-2xl sm:text-3xl align-middle">
+          <span className="inline-flex items-center rounded-full border border-ink/15 dark:border-paper/20 px-3 py-0.5 sm:px-4 sm:py-1 text-2xl sm:text-3xl lg:text-4xl align-middle -translate-y-0.5">
             2022
           </span>{' '}
           combinando ventas{' '}
-          <Handshake size={34} strokeWidth={2} className="inline align-middle text-ink dark:text-paper -translate-y-1" />{' '}
+          <Handshake size={40} strokeWidth={2} className="inline align-middle text-ink dark:text-paper -translate-y-1 sm:-translate-y-2" />{' '}
           y desarrollo web con foco en <span className="text-accent">React</span>,{' '}
           <span className="text-accent">Node.js</span> y <span className="text-accent">PostgreSQL</span>{' '}
-          <Globe size={34} strokeWidth={2} className="inline align-middle text-ink dark:text-paper -translate-y-1" />.
+          <Globe size={40} strokeWidth={2} className="inline align-middle text-ink dark:text-paper -translate-y-1 sm:-translate-y-2" />.
         </p>
 
-        <div className="mt-12 text-center max-w-60 ">
+        <div className="mt-16 sm:mt-20 text-center max-w-60">
           <a
-            href="../assets/cv-jonatan-rodriguez.pdf"
-            download
-            className="flex items-center gap-2 rounded-full bg-accent text-paper px-6 py-3 text-sm font-semibold hover:opacity-90 transition-opacity"
+            href={cvFile} 
+            download="CV_Jonatan_Rodriguez.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative inline-block overflow-hidden rounded-[50px] border-2 border-accent px-[40px] pb-[13px] pt-[14px] font-sans font-semibold text-white transition-colors duration-300 hover:text-black dark:hover:text-white"
           >
-            <Download size={16} strokeWidth={2.5} />
-            Descargar CV
+            <div className="absolute -bottom-[5px] -left-[5px] -right-[5px] z-0 h-[111%] bg-accent transition-all duration-300 ease-in-out group-hover:h-[11%]" />
+            <span className="relative z-10">
+              Descargar C.V.
+            </span>
           </a>
         </div>
 
-        <div className="mt-24">
-          <p className="text-center font-semibold text-sm mb-8">Expertise in Tools</p>
+        <div className="mt-20 sm:mt-24 w-full">
+          <p className="text-center font-semibold text-xl mb-8">Experiencia con las herramientas</p>
           <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
             {skills.map((skill) => (
               <SkillBadge key={skill.name} skill={skill} />
@@ -67,6 +74,7 @@ export function About() {
             </a>
           </div>
         </div>
+        
       </div>
     </section>
   )

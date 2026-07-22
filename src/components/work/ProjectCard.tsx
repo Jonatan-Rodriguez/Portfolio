@@ -18,10 +18,10 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-100px' }}
-        transition={{ duration: 0.6, delay: index * 0.12, ease: 'easeOut' }}
-        whileHover={{ y: -10 }}
+        transition={{ duration: 0.3, delay: index * 0.08, ease: 'easeOut' }}
+        whileHover={{ y: -16 }}
         style={{ backgroundColor: project.color }}
-        className="rounded-3xl p-6 sm:p-7 shadow-sm hover:shadow-2xl transition-shadow duration-300"
+        className="rounded-3xl p-6 sm:p-7 shadow-sm hover:shadow-2xl transition-shadow duration-300 dark:hover:shadow-2xl dark:hover:shadow-accent/10"
       >
         <div className="flex items-center justify-between">
           <span className="w-6 h-px bg-ink/50" />
@@ -36,7 +36,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           {project.tech.map((tech) => (
             <span
               key={tech}
-              className="font-pixel text-[10px] uppercase tracking-wide bg-ink/10 text-ink rounded px-2 py-1"
+              className="font-pixel text-[13px] uppercase tracking-wide bg-ink/10 text-ink rounded px-2 py-1"
             >
               {tech}
             </span>
