@@ -12,7 +12,7 @@ export function AccentSwitch() {
       className="relative inline-flex h-8 sm:h-9 shrink-0 cursor-pointer items-center justify-center rounded-full bg-accent outline-none transition-all duration-300"
       style={{
         aspectRatio: '212.4992 / 84.4688',
-        boxShadow: '0 0 0 10px bg-accent',
+        boxShadow: '0 0 0 7px #ff4d00',
       }}
     >
       <svg
