@@ -4,6 +4,7 @@ import { useScrollProgress } from '../../hooks/useScrollProgress'
 import { ThemeToggle } from './ThemeToggle'
 import { LangToggle } from './LangToggle'
 import { NavLink } from './NavLink'
+import { ConnectButton } from './ConnectButton/ConnectButton'
 
 export function Header() {
   const { scrolled } = useScrollProgress()
@@ -35,16 +36,7 @@ export function Header() {
         <div className="hidden md:flex items-center gap-3">
           <LangToggle />
           <ThemeToggle />
-          
-          <a
-            href="mailto:jonatarodriguez1998@gmail.com"
-            className="flex items-center gap-1.5 rounded-full bg-ink text-paper dark:bg-paper dark:text-ink px-5 py-2.5 text-sm font-semibold hover:opacity-85 transition-opacity"
-          >
-            Connect
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M7 17 17 7M8 7h9v9" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </a>
+          <ConnectButton />
         </div>
 
         <button
@@ -82,13 +74,7 @@ export function Header() {
               <LangToggle />
               <ThemeToggle />
             </div>
-            
-            <a
-              href="mailto:jonatarodriguez1998@gmail.com"
-              className="rounded-full bg-ink text-paper dark:bg-paper dark:text-ink px-4 py-2 text-sm font-semibold"
-            >
-              Connect
-            </a>
+            <ConnectButton />
           </div>
         </div>
       )}

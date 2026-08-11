@@ -1,0 +1,199 @@
+.connect-btn {
+  --line_color: theme('colors.ink');
+  --back_color: theme('colors.accent');
+  @apply bg-ink/5 rounded-full;
+
+  position: relative;
+  z-index: 0;
+  width: 250px; 
+  height: 56px;
+  text-decoration: none;
+  font-size: 16px; 
+  font-weight: bold;
+  color: var(--line_color);
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.dark .connect-btn {
+  --line_color: theme('colors.paper');
+  @apply bg-paper/10;
+}
+
+.connect-btn__text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.connect-btn::before,
+.connect-btn::after,
+.connect-btn__text::before,
+.connect-btn__text::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--line_color);
+  transition: all 0.5s ease;
+}
+
+.connect-btn::before {
+  top: 0;
+  left: 54px;
+  width: calc(100% - 56px * 2 - 16px);
+}
+.connect-btn::after {
+  top: 0;
+  right: 54px;
+  width: 8px;
+}
+.connect-btn__text::before {
+  bottom: 0;
+  right: 54px;
+  width: calc(100% - 56px * 2 - 16px);
+}
+.connect-btn__text::after {
+  bottom: 0;
+  left: 54px;
+  width: 8px;
+}
+
+.connect-btn__line {
+  position: absolute;
+  top: 0;
+  width: 56px;
+  height: 100%;
+  overflow: hidden;
+}
+.connect-btn__line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 300px;
+  border: solid 3px var(--line_color);
+}
+.connect-btn__line:nth-child(1),
+.connect-btn__line:nth-child(1)::before {
+  left: 0;
+}
+.connect-btn__line:nth-child(2),
+.connect-btn__line:nth-child(2)::before {
+  right: 0;
+}
+
+.connect-btn:hover {
+  letter-spacing: 4px; 
+}
+.connect-btn:hover::before,
+.connect-btn:hover .connect-btn__text::before {
+  width: 8px;
+}
+.connect-btn:hover::after,
+.connect-btn:hover .connect-btn__text::after {
+  width: calc(100% - 56px * 2 - 16px);
+}
+
+.connect-btn__drow1,
+.connect-btn__drow2 {
+  position: absolute;
+  z-index: -1;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+}
+.connect-btn__drow1 {
+  top: -16px;
+  left: 40px;
+  width: 32px;
+  height: 0;
+  transform: rotate(30deg);
+}
+.connect-btn__drow2 {
+  top: 44px;
+  left: 77px;
+  width: 32px;
+  height: 0;
+  transform: rotate(-127deg);
+}
+
+.connect-btn__drow1::before,
+.connect-btn__drow1::after,
+.connect-btn__drow2::before {
+  content: "";
+  position: absolute;
+}
+.connect-btn__drow1::before {
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(-60deg);
+}
+.connect-btn__drow1::after {
+  top: -10px;
+  left: 45px;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(69deg);
+}
+.connect-btn__drow2::before {
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(-146deg);
+}
+
+.connect-btn__drow1,
+.connect-btn__drow1::before,
+.connect-btn__drow1::after,
+.connect-btn__drow2,
+.connect-btn__drow2::before {
+  background: var(--back_color);
+}
+
+.connect-btn:hover .connect-btn__drow1 {
+  animation: drow1 ease-in 0.06s forwards;
+}
+.connect-btn:hover .connect-btn__drow1::before {
+  animation: drow2 linear 0.08s 0.06s forwards;
+}
+.connect-btn:hover .connect-btn__drow1::after {
+  animation: drow3 linear 0.03s 0.14s forwards;
+}
+.connect-btn:hover .connect-btn__drow2 {
+  animation: drow4 linear 0.06s 0.2s forwards;
+}
+.connect-btn:hover .connect-btn__drow2::before {
+  animation: drow3 linear 0.03s 0.26s forwards;
+}
+
+@keyframes drow1 {
+  0% { height: 0; }
+  100% { height: 100px; }
+}
+@keyframes drow2 {
+  0% { width: 0; opacity: 0; }
+  10% { opacity: 0; }
+  11% { opacity: 1; }
+  100% { width: 120px; }
+}
+@keyframes drow3 {
+  0% { width: 0; }
+  100% { width: 80px; }
+}
+@keyframes drow4 {
+  0% { height: 0; }
+  100% { height: 120px; }
+}
