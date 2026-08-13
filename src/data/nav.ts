@@ -5,10 +5,10 @@ export interface NavItem {
 }
 
 export const navItems: NavItem[] = [
-  { label: 'Home', href: '#top', index: '01' },
+  { label: 'Inicio', href: '#top', index: '01' },
   { label: 'Sobre Mi', href: '#about', index: '02' },
   { label: 'Formación', href: '#formacion', index: '03' },
   { label: 'Proyectos', href: '#proyectos', index: '04' },
-  { label: 'Experience', href: '#experience', index: '05' },
+  { label: 'Experiencia', href: '#experience', index: '05' },
   { label: 'Contacto', href: '#contact', index: '06' },
 ]

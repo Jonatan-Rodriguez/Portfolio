@@ -1,5 +1,4 @@
 import { Heart } from 'lucide-react'
-import { EmailCopy } from '../contact/EmailCopy'
 import { CoffeeMug } from '../contact/CoffeeMug'
 
 export function Footer() {
@@ -10,9 +9,6 @@ export function Footer() {
           <p className="font-display font-bold text-2xl sm:text-3xl">
             &lt;Jona<span className="text-accent">/</span>&gt;
           </p>
-          <div className="mt-6">
-            <EmailCopy />
-          </div>
         </div>
 
         <div className="relative mt-20">

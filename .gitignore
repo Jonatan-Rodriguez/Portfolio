@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Entornos y variables secretas
+.env
+.env.*
+!.env.example
