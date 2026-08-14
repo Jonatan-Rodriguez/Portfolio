@@ -1,4 +1,5 @@
 import { AccentSwitch } from '../components/home/AccentSwitch'
+import { GooeyTextLoop } from '../components/home/GooeyTextLoop'
 
 export function Home() {
   return (
@@ -13,8 +14,11 @@ export function Home() {
           <AccentSwitch />
         </div>
 
-        <h2 className="font-display font-bold text-ink dark:text-paper text-[16vw] sm:text-7xl md:text-8xl lg:text-9xl xl:text-[11rem] 2xl:text-[12rem] leading-[0.9] tracking-tight">
-          DEVELOPER
+        <h2 aria-label="Developer" className="leading-[0.9]">
+          <GooeyTextLoop
+            words={['DEVELOPER', 'PROGRAMADOR']}
+            className="font-display font-bold text-ink dark:text-paper text-[16vw] sm:text-7xl md:text-8xl lg:text-9xl xl:text-[11rem] 2xl:text-[12rem] leading-[0.9] tracking-tight"
+          />
         </h2>
 
         <p className="font-pixel mt-2 sm:mt-4 tracking-widest text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[7rem]">
