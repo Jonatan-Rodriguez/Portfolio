@@ -5,6 +5,7 @@ import { ThemeToggle } from './ThemeToggle'
 import { LangToggle } from './LangToggle'
 import { NavLink } from './NavLink'
 import { ConnectButton } from './ConnectButton/ConnectButton'
+import { MenuButton } from './MenuButton'
 
 export function Header() {
   const { scrolled } = useScrollProgress()
@@ -39,45 +40,43 @@ export function Header() {
           <ConnectButton />
         </div>
 
-        <button
-          type="button"
-          onClick={() => setOpen((o) => !o)}
-          className="md:hidden grid place-items-center w-10 h-10 rounded-full border border-ink/15 dark:border-paper/20"
-          aria-label="Abrir menú"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            {open ? (
-              <path d="M6 6l12 12M18 6 6 18" strokeLinecap="round" />
-            ) : (
-              <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
-            )}
-          </svg>
-        </button>
+        <MenuButton open={open} onClick={() => setOpen((o) => !o)} />
       </div>
 
-      {open && (
-        <div className="md:hidden mt-1 mx-6 rounded-2xl border border-ink/10 dark:border-paper/10 bg-paper dark:bg-ink shadow-lg overflow-hidden">
-          <nav className="flex flex-col p-2">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="px-4 py-3 rounded-xl text-sm font-medium hover:bg-ink/5 dark:hover:bg-paper/10"
-              >
-                {item.label} <sup className="text-[10px] text-ink/40 dark:text-paper/40">{item.index}</sup>
-              </a>
-            ))}
-          </nav>
-          <div className="flex items-center justify-between px-4 py-3 border-t border-ink/10 dark:border-paper/10">
-            <div className="flex items-center gap-3">
-              <LangToggle />
-              <ThemeToggle />
+      <div
+        aria-hidden={!open}
+        className={`md:hidden grid transition-[grid-template-rows] duration-400 ease-in-out ${
+          open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+        }`}
+      >
+        <div className="overflow-hidden">
+          <div
+            className={`mt-1 mx-6 rounded-2xl border border-ink/10 dark:border-paper/10 bg-paper dark:bg-ink shadow-lg overflow-hidden transition-opacity duration-300 ease-in-out ${
+              open ? 'opacity-100 delay-100' : 'opacity-0'
+            }`}
+          >
+            <nav className="flex flex-col p-2">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="px-4 py-3 rounded-xl text-sm font-medium hover:bg-ink/5 dark:hover:bg-paper/10"
+                >
+                  {item.label} <sup className="text-[10px] text-ink/40 dark:text-paper/40">{item.index}</sup>
+                </a>
+              ))}
+            </nav>
+            <div className="flex items-center justify-between px-4 py-3 border-t border-ink/10 dark:border-paper/10">
+              <div className="flex items-center gap-3">
+                <LangToggle />
+                <ThemeToggle />
+              </div>
+              <ConnectButton />
             </div>
-            <ConnectButton />
           </div>
         </div>
-      )}
+      </div>
     </header>
   )
 }
