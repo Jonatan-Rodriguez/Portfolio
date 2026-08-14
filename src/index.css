@@ -44,3 +44,9 @@ body {
   background-color: theme('colors.accent');
   color: theme('colors.paper');
 }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}

@@ -1,13 +1,15 @@
 import { useTheme } from '../../context/ThemeContext'
+import { useThemeTransition } from '../../hooks/useThemeTransition'
 
 export function AccentSwitch() {
-  const { theme, toggleTheme } = useTheme()
+  const { theme } = useTheme()
   const isDark = theme === 'dark'
+  const toggleWithTransition = useThemeTransition()
 
   return (
     <button
       type="button"
-      onClick={toggleTheme}
+      onClick={toggleWithTransition}
       aria-label="Cambiar tema"
       className="relative inline-flex h-8 sm:h-9 shrink-0 cursor-pointer items-center justify-center rounded-full bg-accent outline-none transition-all duration-300"
       style={{
@@ -15,11 +17,7 @@ export function AccentSwitch() {
         boxShadow: '0 0 0 7px #ff4d00',
       }}
     >
-      <svg
-        viewBox="0 0 212.4992 84.4688"
-        overflow="visible"
-        className="h-full w-full"
-      >
+      <svg viewBox="0 0 212.4992 84.4688" overflow="visible" className="h-full w-full">
         <path
           pathLength={360}
           fill="none"

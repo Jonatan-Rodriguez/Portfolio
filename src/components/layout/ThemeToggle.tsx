@@ -1,12 +1,14 @@
 import { useTheme } from '../../context/ThemeContext'
+import { useThemeTransition } from '../../hooks/useThemeTransition'
 
 export function ThemeToggle() {
-  const { theme, toggleTheme } = useTheme()
+  const { theme } = useTheme()
+  const toggleWithTransition = useThemeTransition()
 
   return (
     <button
       type="button"
-      onClick={toggleTheme}
+      onClick={toggleWithTransition}
       aria-label="Cambiar tema"
       className="grid place-items-center w-9 h-9 rounded-full hover:bg-ink/5 dark:hover:bg-paper/10 transition-colors"
     >
