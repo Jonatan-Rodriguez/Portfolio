@@ -1,15 +1,22 @@
 import { useTheme } from '../../context/ThemeContext'
 import { useThemeTransition } from '../../hooks/useThemeTransition'
+import { useSound } from '../../hooks/useSound'
 
 export function AccentSwitch() {
   const { theme } = useTheme()
   const isDark = theme === 'dark'
   const toggleWithTransition = useThemeTransition()
+  const playClick = useSound('/sounds/accent-switch-click.wav', 0.3)
+
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    playClick()
+    toggleWithTransition(e)
+  }
 
   return (
     <button
       type="button"
-      onClick={toggleWithTransition}
+      onClick={handleClick}
       aria-label="Cambiar tema"
       className="relative inline-flex h-8 sm:h-9 shrink-0 cursor-pointer items-center justify-center rounded-full bg-accent outline-none transition-all duration-300"
       style={{

@@ -1,14 +1,21 @@
 import { useTheme } from '../../context/ThemeContext'
 import { useThemeTransition } from '../../hooks/useThemeTransition'
+import { useSound } from '../../hooks/useSound'
 
 export function ThemeToggle() {
   const { theme } = useTheme()
   const toggleWithTransition = useThemeTransition()
+  const playClick = useSound('/sounds/theme-toggle-click.wav', 0.3)
+
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    playClick()
+    toggleWithTransition(e)
+  }
 
   return (
     <button
       type="button"
-      onClick={toggleWithTransition}
+      onClick={handleClick}
       aria-label="Cambiar tema"
       className="grid place-items-center w-9 h-9 rounded-full hover:bg-ink/5 dark:hover:bg-paper/10 transition-colors"
     >
