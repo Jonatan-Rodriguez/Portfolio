@@ -14,10 +14,9 @@ export function Footer() {
           <div className="h-px bg-ink/10 dark:bg-paper/10" />
         </div>
 
-        {/* Contenedor principal de 3 columnas */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-8 pb-2">
           
-          {/* Lado Izquierdo (33%): Logo y Copyright */}
+          {/* Lado Izquierdo */}
           <div className="flex flex-col items-center sm:items-start gap-2 w-full sm:w-1/3">
             <p className="font-display font-bold text-2xl sm:text-3xl">
               &lt;Jona<span className="text-accent">/</span>&gt;
@@ -27,14 +26,14 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Centro (33%): Hecho con amor */}
+          {/* Centro */}
           <div className="flex justify-center w-full sm:w-1/3 text-sm text-ink/60 dark:text-paper/60">
             <p className="flex items-center gap-1.5">
               Hecho con <Heart size={13} className="text-accent fill-accent" /> por Jona
             </p>
           </div>
 
-          {/* Lado Derecho (33%): Redes Sociales Animadas */}
+          {/* Lado Derecho */}
           <div className="flex justify-center sm:justify-end w-full sm:w-1/3">
             <ul className="flex items-center">
               {/* GitHub */}
