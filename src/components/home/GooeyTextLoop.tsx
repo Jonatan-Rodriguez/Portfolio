@@ -4,6 +4,8 @@ interface GooeyTextLoopProps {
   words: string[]
   interval?: number
   transitionDuration?: number
+  minSize?: string
+  maxSize?: string
   className?: string
 }
 
@@ -11,10 +13,16 @@ export function GooeyTextLoop({
   words,
   interval = 4000,
   transitionDuration = 1000,
+  minSize = '2.75rem',
+  maxSize = '12rem',
   className = '',
 }: GooeyTextLoopProps) {
   const [index, setIndex] = useState(0)
   const blurAnimRef = useRef<SVGAnimateElement>(null)
+
+  const longestLength = Math.max(...words.map((w) => w.length))
+  const preferredVw = 92 / (longestLength * 0.62)
+  const fontSize = `clamp(${minSize}, ${preferredVw.toFixed(2)}vw, ${maxSize})`
 
   useEffect(() => {
     if (words.length < 2) return
@@ -59,7 +67,7 @@ export function GooeyTextLoop({
       <div
         aria-hidden="true"
         className={`relative grid ${className}`}
-        style={{ filter: 'url(#gooey-text)' }}
+        style={{ filter: 'url(#gooey-text)', fontSize }}
       >
         {words.map((word, i) => (
           <span

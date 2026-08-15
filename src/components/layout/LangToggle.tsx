@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
-type Lang = 'ES' | 'EN' | 'JA'
+type Lang = 'ES' | 'EN' 
 
-const LANGS: Lang[] = ['ES', 'EN', 'JA']
+const LANGS: Lang[] = ['ES', 'EN']
 
 export function LangToggle() {
   const [lang, setLang] = useState<Lang>('ES')

@@ -17,7 +17,7 @@ export function Home() {
         <h2 aria-label="Developer" className="leading-[0.9]">
           <GooeyTextLoop
             words={['DEVELOPER', 'PROGRAMADOR']}
-            className="font-display font-bold text-ink dark:text-paper text-[16vw] sm:text-7xl md:text-8xl lg:text-9xl xl:text-[11rem] 2xl:text-[12rem] leading-[0.9] tracking-tight"
+            className="font-display font-bold text-ink dark:text-paper leading-[0.9] tracking-tight"
           />
         </h2>
 
