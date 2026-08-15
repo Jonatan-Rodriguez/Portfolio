@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { navItems } from '../../data/nav'
 import { useScrollProgress } from '../../hooks/useScrollProgress'
 import { ThemeToggle } from './ThemeToggle'
+import { SoundToggle } from './SoundToggle'
 import { LangToggle } from './LangToggle'
 import { NavLink } from './NavLink'
 import { ConnectButton } from './ConnectButton/ConnectButton'
@@ -37,6 +38,7 @@ export function Header() {
         <div className="hidden nav:flex items-center gap-3">
           <LangToggle />
           <ThemeToggle />
+          <SoundToggle />
           <ConnectButton />
         </div>
 
@@ -71,6 +73,7 @@ export function Header() {
               <div className="flex items-center gap-3">
                 <LangToggle />
                 <ThemeToggle />
+                <SoundToggle />
               </div>
               <ConnectButton />
             </div>

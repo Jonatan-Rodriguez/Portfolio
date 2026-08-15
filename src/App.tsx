@@ -9,22 +9,25 @@ import { Work } from './sections/Work'
 import { Experience } from './sections/Experience'
 import { Contact } from './sections/Contact'
 import { Footer } from './components/layout/Footer'
+import { SoundProvider } from './context/SoundContext'
 
 function App() {
   return (
     <ThemeProvider>
-      <PaperBackground />
-      <ScrollProgress />
-      <Header />
-      <main>
-        <Home />
-        <About />
-        <Education />
-        <Work />
-        <Experience />
-        <Contact />
-      </main>
-      <Footer />
+      <SoundProvider> 
+        <PaperBackground />
+        <ScrollProgress />
+        <Header />
+        <main>
+          <Home />
+          <About />
+          <Education />
+          <Work />
+          <Experience />
+          <Contact />
+        </main>
+        <Footer />
+      </SoundProvider>
     </ThemeProvider>
   )
 }
