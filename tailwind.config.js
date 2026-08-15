@@ -11,7 +11,7 @@ export default {
       },
       fontFamily: {
         display: ['"Space Grotesk"', 'sans-serif'],
-        pixel: ['"Silkscreen"', 'monospace'],
+        pixel: ['"Jersey 10"', 'monospace'],
         body: ['"Inter"', 'sans-serif'],
       },
       backgroundImage: {

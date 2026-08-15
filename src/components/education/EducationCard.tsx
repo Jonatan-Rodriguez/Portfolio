@@ -18,12 +18,10 @@ export function EducationCard({ item, index }: EducationCardProps) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.5, delay: index * 0.08, ease: 'easeOut' }}
-        // 👇 1. Agregamos whileHover para manejar el movimiento físico
         whileHover={{ scale: 1.02, y: -6 }} 
         className="
           rounded-2xl bg-[#f7ede2] dark:bg-[#111111] text-ink dark:text-white p-6 sm:p-7 
           border border-ink/5 dark:border-white/5
-          /* 👇 2. Quitamos el hover:translate y hover:scale de Tailwind */
           shadow-sm transition-all duration-300 ease-out 
           hover:shadow-lg hover:shadow-ink/10 
           dark:hover:bg-[#181818] dark:hover:border-white/20 dark:hover:shadow-2xl dark:hover:shadow-accent/10
@@ -52,7 +50,7 @@ export function EducationCard({ item, index }: EducationCardProps) {
                 {item.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="font-pixel text-[10px] uppercase tracking-wide rounded border border-ink/20 dark:border-white/20 px-2 py-1 text-ink/90 dark:text-white/90"
+                    className="font-pixel text-[1em] uppercase tracking-[0.075em] rounded border border-ink/20 dark:border-white/20 px-2 py-1 text-ink/90 dark:text-white/90"
                   >
                     {tag}
                   </span>

@@ -21,7 +21,7 @@ export function Home() {
           />
         </h2>
 
-        <p className="font-pixel mt-2 sm:mt-4 tracking-widest text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[7rem]">
+        <p className="font-pixel mt-2 sm:mt-4 tracking-[0.2em] text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[9rem]">
           PERN
         </p>
 

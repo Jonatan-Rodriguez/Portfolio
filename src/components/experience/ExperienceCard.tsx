@@ -52,7 +52,7 @@ export function ExperienceCard({ item, index }: ExperienceCardProps) {
                 {item.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="font-pixel text-[10px] uppercase tracking-wide rounded border border-ink/20 dark:border-white/20 px-2 py-1 text-ink/90 dark:text-white/90"
+                    className="font-pixel text-[1em] uppercase tracking-[0.075em] rounded border border-ink/20 dark:border-white/20 px-2 py-1 text-ink/90 dark:text-white/90"
                   >
                     {tag}
                   </span>
