@@ -28,13 +28,13 @@ export function Header() {
           <span className="text-accent">&lt;</span>Jona<span className="text-accent">&gt;</span>
         </a>
 
-        <nav className="hidden md:flex items-center gap-1 rounded-full px-2 py-2 bg-ink/5 dark:bg-paper/10">
+        <nav className="hidden nav:flex items-center gap-1 rounded-full px-2 py-2 bg-ink/5 dark:bg-paper/10">
           {navItems.map((item) => (
             <NavLink key={item.href} item={item} />
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden nav:flex items-center gap-3">
           <LangToggle />
           <ThemeToggle />
           <ConnectButton />
@@ -45,7 +45,7 @@ export function Header() {
 
       <div
         aria-hidden={!open}
-        className={`md:hidden grid transition-[grid-template-rows] duration-400 ease-in-out ${
+        className={`nav:hidden grid transition-[grid-template-rows] duration-400 ease-in-out ${
           open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
         }`}
       >

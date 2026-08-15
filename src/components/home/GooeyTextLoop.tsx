@@ -11,8 +11,8 @@ interface GooeyTextLoopProps {
 
 export function GooeyTextLoop({
   words,
-  interval = 4000,
-  transitionDuration = 1000,
+  interval = 2600,
+  transitionDuration = 900,
   minSize = '2.75rem',
   maxSize = '12rem',
   className = '',
@@ -21,8 +21,8 @@ export function GooeyTextLoop({
   const blurAnimRef = useRef<SVGAnimateElement>(null)
 
   const longestLength = Math.max(...words.map((w) => w.length))
-  const preferredVw = 92 / (longestLength * 0.62)
-  const fontSize = `clamp(${minSize}, ${preferredVw.toFixed(2)}vw, ${maxSize})`
+  const preferredCqw = 98 / (longestLength * 0.62)
+  const fontSize = `clamp(${minSize}, ${preferredCqw.toFixed(2)}cqw, ${maxSize})`
 
   useEffect(() => {
     if (words.length < 2) return

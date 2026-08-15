@@ -5,7 +5,7 @@ export function Home() {
   return (
     <section id="top" className="min-h-screen w-full flex flex-col justify-center pt-28 sm:pt-32 pb-8">
 
-      <div className="relative flex flex-col justify-center w-[92%] sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] mx-auto">
+      <div className="relative flex flex-col justify-center w-[92%] sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] mx-auto [container-type:inline-size]">
 
         <div className="flex items-center gap-3 sm:gap-5 mb-2">
           <h1 className="font-display font-semibold text-accent text-[15vw] sm:text-7xl md:text-8xl lg:text-9xl xl:text-[11rem] 2xl:text-[12.5rem] leading-none">

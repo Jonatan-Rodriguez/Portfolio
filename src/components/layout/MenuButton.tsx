@@ -10,7 +10,7 @@ export function MenuButton({ open, onClick }: MenuButtonProps) {
       onClick={onClick}
       aria-expanded={open}
       aria-label="Abrir menú"
-      className="md:hidden grid place-items-center w-10 h-10 rounded-full border border-ink/15 dark:border-paper/20"
+      className="nav:hidden grid place-items-center w-10 h-10 rounded-full border border-ink/15 dark:border-paper/20"
     >
       <span className="relative w-4 h-4">
         <span
