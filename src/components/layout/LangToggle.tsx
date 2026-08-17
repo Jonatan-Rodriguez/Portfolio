@@ -1,12 +1,10 @@
-import { useState } from 'react'
 import { useSound } from '../../hooks/useSound'
+import { useLanguage, type Lang } from '../../context/LanguageContext'
 
-type Lang = 'ES' | 'EN'
-
-const LANGS: Lang[] = ['ES', 'EN']
+const LANGS: Lang[] = ['es', 'en']
 
 export function LangToggle() {
-  const [lang, setLang] = useState<Lang>('ES')
+  const { lang, setLang } = useLanguage()
   const playClick = useSound('/sounds/lang-toggle-click.wav', 0.3)
 
   const handleSelect = (l: Lang) => {
@@ -25,7 +23,7 @@ export function LangToggle() {
             lang === l ? 'bg-ink text-paper dark:bg-paper dark:text-ink' : 'text-ink/40 dark:text-paper/40'
           }`}
         >
-          {l}
+          {l.toUpperCase()}
         </button>
       ))}
     </div>

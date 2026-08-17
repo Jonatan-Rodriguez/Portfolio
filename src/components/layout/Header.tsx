@@ -8,11 +8,14 @@ import { NavLink } from './NavLink'
 import { ConnectButton } from './ConnectButton/ConnectButton'
 import { MenuButton } from './MenuButton'
 import { useSound } from '../../hooks/useSound'
+import { useLanguage } from '../../context/LanguageContext'
+import { AnimatedText } from '../shared/AnimatedText'
 
 export function Header() {
   const { scrolled } = useScrollProgress()
   const [open, setOpen] = useState(false)
   const playNavSound = useSound('/sounds/nav-link-click.wav', 0.2)
+  const { t } = useLanguage()
 
   return (
     <header className="fixed top-0 left-0 w-full z-50">
@@ -70,7 +73,8 @@ export function Header() {
                   }}
                   className="px-4 py-3 rounded-xl text-sm font-medium hover:bg-ink/5 dark:hover:bg-paper/10"
                 >
-                  {item.label} <sup className="text-[10px] text-ink/40 dark:text-paper/40">{item.index}</sup>
+                  <AnimatedText text={t.nav[item.id]} className="inline-block" />{' '}
+                  <sup className="text-[10px] text-ink/40 dark:text-paper/40">{item.index}</sup>
                 </a>
               ))}
             </nav>

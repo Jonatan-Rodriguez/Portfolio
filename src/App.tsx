@@ -1,4 +1,6 @@
 import { ThemeProvider } from './context/ThemeContext'
+import { SoundProvider } from './context/SoundContext'
+import { LanguageProvider } from './context/LanguageContext'
 import { PaperBackground } from './components/layout/PaperBackground'
 import { ScrollProgress } from './components/layout/ScrollProgress'
 import { Header } from './components/layout/Header'
@@ -9,24 +11,25 @@ import { Work } from './sections/Work'
 import { Experience } from './sections/Experience'
 import { Contact } from './sections/Contact'
 import { Footer } from './components/layout/Footer'
-import { SoundProvider } from './context/SoundContext'
 
 function App() {
   return (
     <ThemeProvider>
-      <SoundProvider> 
-        <PaperBackground />
-        <ScrollProgress />
-        <Header />
-        <main>
-          <Home />
-          <About />
-          <Education />
-          <Work />
-          <Experience />
-          <Contact />
-        </main>
-        <Footer />
+      <SoundProvider>
+        <LanguageProvider>
+          <PaperBackground />
+          <ScrollProgress />
+          <Header />
+          <main>
+            <Home />
+            <About />
+            <Education />
+            <Work />
+            <Experience />
+            <Contact />
+          </main>
+          <Footer />
+        </LanguageProvider>
       </SoundProvider>
     </ThemeProvider>
   )

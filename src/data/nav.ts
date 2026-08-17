@@ -1,14 +1,16 @@
+export type NavItemId = 'home' | 'about' | 'formacion' | 'proyectos' | 'experiencia' | 'contacto'
+
 export interface NavItem {
-  label: string
+  id: NavItemId
   href: string
   index: string
 }
 
 export const navItems: NavItem[] = [
-  { label: 'Inicio', href: '#top', index: '01' },
-  { label: 'Sobre Mi', href: '#about', index: '02' },
-  { label: 'Formación', href: '#formacion', index: '03' },
-  { label: 'Proyectos', href: '#proyectos', index: '04' },
-  { label: 'Experiencia', href: '#experience', index: '05' },
-  { label: 'Contacto', href: '#contact', index: '06' },
+  { id: 'home', href: '#top', index: '01' },
+  { id: 'about', href: '#about', index: '02' },
+  { id: 'formacion', href: '#formacion', index: '03' },
+  { id: 'proyectos', href: '#proyectos', index: '04' },
+  { id: 'experiencia', href: '#experience', index: '05' },
+  { id: 'contacto', href: '#contact', index: '06' },
 ]
