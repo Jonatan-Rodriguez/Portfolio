@@ -1,11 +1,18 @@
 import { useState } from 'react'
+import { useSound } from '../../hooks/useSound'
 
-type Lang = 'ES' | 'EN' 
+type Lang = 'ES' | 'EN'
 
 const LANGS: Lang[] = ['ES', 'EN']
 
 export function LangToggle() {
   const [lang, setLang] = useState<Lang>('ES')
+  const playClick = useSound('/sounds/lang-toggle-click.wav', 0.3)
+
+  const handleSelect = (l: Lang) => {
+    if (l !== lang) playClick()
+    setLang(l)
+  }
 
   return (
     <div className="flex items-center rounded-full border border-ink/15 dark:border-paper/20 p-1 text-xs font-display font-semibold">
@@ -13,7 +20,7 @@ export function LangToggle() {
         <button
           key={l}
           type="button"
-          onClick={() => setLang(l)}
+          onClick={() => handleSelect(l)}
           className={`px-2.5 py-1 rounded-full transition-colors ${
             lang === l ? 'bg-ink text-paper dark:bg-paper dark:text-ink' : 'text-ink/40 dark:text-paper/40'
           }`}

@@ -1,4 +1,5 @@
 import type { NavItem } from '../../data/nav'
+import { useSound } from '../../hooks/useSound'
 
 interface NavLinkProps {
   item: NavItem
@@ -6,8 +7,15 @@ interface NavLinkProps {
 }
 
 export function NavLink({ item, onClick }: NavLinkProps) {
+  const playClick = useSound('/sounds/nav-link-click.wav', 0.3)
+
+  const handleClick = () => {
+    playClick()
+    onClick?.()
+  }
+
   return (
-    <a href={item.href} onClick={onClick} className="group px-4 py-2 rounded-full text-sm font-medium">
+    <a href={item.href} onClick={handleClick} className="group px-4 py-2 rounded-full text-sm font-medium">
       <span className="relative inline-flex overflow-hidden h-[1.4em] align-middle">
         <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full">
           {item.label}

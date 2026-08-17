@@ -7,10 +7,12 @@ import { LangToggle } from './LangToggle'
 import { NavLink } from './NavLink'
 import { ConnectButton } from './ConnectButton/ConnectButton'
 import { MenuButton } from './MenuButton'
+import { useSound } from '../../hooks/useSound'
 
 export function Header() {
   const { scrolled } = useScrollProgress()
   const [open, setOpen] = useState(false)
+  const playNavSound = useSound('/sounds/nav-link-click.wav', 0.2)
 
   return (
     <header className="fixed top-0 left-0 w-full z-50">
@@ -62,7 +64,10 @@ export function Header() {
                 <a
                   key={item.href}
                   href={item.href}
-                  onClick={() => setOpen(false)}
+                  onClick={() => {
+                    playNavSound()
+                    setOpen(false)
+                  }}
                   className="px-4 py-3 rounded-xl text-sm font-medium hover:bg-ink/5 dark:hover:bg-paper/10"
                 >
                   {item.label} <sup className="text-[10px] text-ink/40 dark:text-paper/40">{item.index}</sup>
