@@ -1,7 +1,11 @@
 import { AccentSwitch } from '../components/home/AccentSwitch'
 import { GooeyTextLoop } from '../components/home/GooeyTextLoop'
+import { AnimatedText } from '../components/shared/AnimatedText'
+import { useLanguage } from '../context/LanguageContext'
 
 export function Home() {
+  const { t } = useLanguage()
+
   return (
     <section id="top" className="min-h-screen w-full flex flex-col justify-center pt-28 sm:pt-32 pb-8">
 
@@ -14,9 +18,9 @@ export function Home() {
           <AccentSwitch />
         </div>
 
-        <h2 aria-label="Developer" className="leading-[0.9]">
+        <h2 aria-label={t.hero.ariaRole} className="leading-[0.9]">
           <GooeyTextLoop
-            words={['DEVELOPER', 'PROGRAMADOR']}
+            words={t.hero.developerWords}
             className="font-display font-bold text-ink dark:text-paper leading-[0.9] tracking-tight"
           />
         </h2>
@@ -28,13 +32,15 @@ export function Home() {
         <div className="mt-6 sm:mt-8 flex flex-col md:flex-row md:items-end justify-between gap-10 md:gap-6 w-full">
 
           <p className="w-full md:max-w-[55%] lg:max-w-[60%] xl:max-w-[48%] text-base sm:text-lg md:text-xl lg:text-[1.7rem] leading-relaxed lg:leading-[1.6] text-ink/80 dark:text-paper/80">
-            <span className="font-semibold text-accent dark:text-accent">Full-Stack Developer</span> &{' '}
-            <span className="font-semibold text-accent dark:text-accent">Estudiante de Ingeniería en Computación</span>.
+            <AnimatedText text={t.hero.role} className="font-semibold text-accent dark:text-accent" /> &{' '}
+            <AnimatedText text={t.hero.study} className="font-semibold text-accent dark:text-accent" />.
           </p>
 
           <div className="flex items-center justify-start md:justify-end gap-3 sm:gap-4 shrink-0">
             <div className="text-left">
-              <p className="text-base sm:text-lg text-ink/60 dark:text-paper/60">Hola! Soy</p>
+              <p className="text-base sm:text-lg text-ink/60 dark:text-paper/60">
+                <AnimatedText text={t.hero.greeting} />
+              </p>
               <p className="font-display font-bold text-xl sm:text-2xl md:text-3xl text-accent">
                 Jonatan Rodriguez.
               </p>

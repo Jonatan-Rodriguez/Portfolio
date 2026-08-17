@@ -34,7 +34,7 @@ export function GooeyTextLoop({
 
   useEffect(() => {
     blurAnimRef.current?.beginElement()
-  }, [index])
+  }, [index, words.join(',')])
 
   const durSeconds = transitionDuration / 1000
 

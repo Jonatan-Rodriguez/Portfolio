@@ -10,4 +10,11 @@ export interface Translations {
   connectButton: {
     cta: string
   }
+  hero: {
+    developerWords: [string, string]
+    ariaRole: string
+    role: string
+    study: string
+    greeting: string
+  }
 }

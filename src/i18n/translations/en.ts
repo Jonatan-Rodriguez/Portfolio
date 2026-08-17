@@ -12,4 +12,11 @@ export const en: Translations = {
   connectButton: {
     cta: 'CONTACT ME',
   },
+  hero: {
+    developerWords: ['DEVELOPER', 'PROGRAMMER'],
+    ariaRole: 'Developer',
+    role: 'Full-Stack Developer',
+    study: 'Computer Engineering Student',
+    greeting: "Hi! I'm",
+  },
 }
