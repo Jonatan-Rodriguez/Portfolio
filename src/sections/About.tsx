@@ -2,23 +2,34 @@ import { Hand, Handshake, Globe } from 'lucide-react'
 import { FaGithub } from 'react-icons/fa'
 import { skills } from '../data/skills'
 import { SkillBadge } from '../components/about/SkillBadge'
-import cvFile from '../assets/pdf/cv-jonatan-rodriguez.pdf';
+import { AnimatedText } from '../components/shared/AnimatedText'
+import { useLanguage } from '../context/LanguageContext'
+import cvFile from '../assets/pdf/cv-jonatan-rodriguez.pdf'
 
 export function About() {
+  const { t } = useLanguage()
+
   return (
     <section id="about" className="min-h-screen w-full flex flex-col justify-center py-16">
-      
+
       <div className="w-[92%] sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] mx-auto flex flex-col justify-center items-center">
-        
+
         <div className="flex flex-wrap items-end justify-center gap-6 mb-12 sm:mb-20">
           <div className="flex flex-col items-center gap-2">
-            <p className="text-accent font-semibold text-sm tracking-wide uppercase">Quién soy</p>
-            <h2 className="font-display font-bold text-4xl sm:text-5xl mt-2">Acerca de mí</h2>
+            <p className="text-accent font-semibold text-sm tracking-wide uppercase">
+              <AnimatedText text={t.about.eyebrow} />
+            </p>
+            <h2 className="font-display font-bold text-4xl sm:text-5xl mt-2">
+              <AnimatedText text={t.about.title} />
+            </h2>
           </div>
         </div>
 
         <p className="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-snug lg:leading-tight text-center max-w-5xl mx-auto text-balance">
-          Hola, <span className="text-accent">soy</span>{' '}
+          <AnimatedText text={t.about.bioGreeting} />{' '}
+          <span className="text-accent">
+            <AnimatedText text={t.about.bioAmVerb} />
+          </span>{' '}
           <img
             src="/img/profile.jpg"
             alt="Jonatan Rodriguez"
@@ -26,20 +37,21 @@ export function About() {
           />{' '}
           <span className="text-accent">Jonatan</span>{' '}
           <Hand size={40} strokeWidth={2} className="inline align-middle text-ink dark:text-paper -translate-y-1 sm:-translate-y-2" />
-          , full-stack developer desde{' '}
+          <AnimatedText text={t.about.bioSince} className="inline" />{' '}
           <span className="inline-flex items-center rounded-full border border-ink/15 dark:border-paper/20 px-3 py-0.5 sm:px-4 sm:py-1 text-2xl sm:text-3xl lg:text-4xl align-middle -translate-y-0.5">
             2022
           </span>{' '}
-          combinando ventas{' '}
+          <AnimatedText text={t.about.bioCombining} className="inline" />{' '}
           <Handshake size={40} strokeWidth={2} className="inline align-middle text-ink dark:text-paper -translate-y-1 sm:-translate-y-2" />{' '}
-          y desarrollo web con foco en <span className="text-accent">React</span>,{' '}
-          <span className="text-accent">Node.js</span> y <span className="text-accent">PostgreSQL</span>{' '}
+          <AnimatedText text={t.about.bioFocus} className="inline" /> <span className="text-accent">React</span>,{' '}
+          <span className="text-accent">Node.js</span> <AnimatedText text={t.about.and} className="inline" />{' '}
+          <span className="text-accent">PostgreSQL</span>{' '}
           <Globe size={40} strokeWidth={2} className="inline align-middle text-ink dark:text-paper -translate-y-1 sm:-translate-y-2" />.
         </p>
 
         <div className="mt-16 sm:mt-20 text-center max-w-60">
           <a
-            href={cvFile} 
+            href={cvFile}
             download="CV_Jonatan_Rodriguez.pdf"
             target="_blank"
             rel="noopener noreferrer"
@@ -47,18 +59,20 @@ export function About() {
           >
             <div className="absolute -bottom-[5px] -left-[5px] -right-[5px] z-0 h-[111%] bg-accent transition-all duration-300 ease-in-out group-hover:h-[11%]" />
             <span className="relative z-10">
-              Descargar C.V.
+              <AnimatedText text={t.about.downloadCv} />
             </span>
           </a>
         </div>
 
         <div className="mt-20 sm:mt-24 w-full">
-          <p className="text-center font-semibold text-xl mb-8">Experiencia con las herramientas</p>
+          <p className="text-center font-semibold text-xl mb-8">
+            <AnimatedText text={t.about.toolsTitle} />
+          </p>
           <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
             {skills.map((skill) => (
               <SkillBadge key={skill.name} skill={skill} />
             ))}
-            
+
             <a
               href="https://github.com/Jonatan-Rodriguez"
               target="_blank"
@@ -74,7 +88,7 @@ export function About() {
             </a>
           </div>
         </div>
-        
+
       </div>
     </section>
   )

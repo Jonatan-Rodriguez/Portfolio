@@ -17,4 +17,16 @@ export interface Translations {
     study: string
     greeting: string
   }
+  about: {
+    eyebrow: string
+    title: string
+    bioGreeting: string
+    bioAmVerb: string
+    bioSince: string
+    bioCombining: string
+    bioFocus: string
+    and: string
+    downloadCv: string
+    toolsTitle: string
+  }
 }

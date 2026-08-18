@@ -19,4 +19,16 @@ export const es: Translations = {
     study: 'Estudiante de Ingeniería en Computación',
     greeting: 'Hola! Soy',
   },
+  about: {
+    eyebrow: 'Quién soy',
+    title: 'Acerca de mí',
+    bioGreeting: 'Hola,',
+    bioAmVerb: 'soy',
+    bioSince: ', full-stack developer desde',
+    bioCombining: 'combinando ventas',
+    bioFocus: 'y desarrollo web con foco en',
+    and: 'y',
+    downloadCv: 'Descargar C.V.',
+    toolsTitle: 'Experiencia con las herramientas',
+  },
 }
