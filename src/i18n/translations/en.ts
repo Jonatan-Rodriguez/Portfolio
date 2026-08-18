@@ -31,4 +31,8 @@ export const en: Translations = {
     downloadCv: 'Download C.V.',
     toolsTitle: 'Tools I work with',
   },
+  education: {
+    eyebrow: 'My Path',
+    title: 'Education',
+  },
 }

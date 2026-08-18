@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import type { EducationItem } from '../../data/education'
+import { AnimatedText } from '../shared/AnimatedText'
 
 interface EducationCardProps {
   item: EducationItem
@@ -18,7 +19,7 @@ export function EducationCard({ item, index }: EducationCardProps) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.5, delay: index * 0.08, ease: 'easeOut' }}
-        whileHover={{ scale: 1.02, y: -6 }} 
+        whileHover={{ scale: 1.02, y: -6 }}
         className="
           rounded-2xl bg-[#f7ede2] dark:bg-[#111111] text-ink dark:text-white p-6 sm:p-7 
           border border-ink/5 dark:border-white/5
@@ -34,16 +35,26 @@ export function EducationCard({ item, index }: EducationCardProps) {
 
           <div className="flex-1 min-w-0">
             <div className="flex flex-wrap items-center justify-between gap-2">
-              <h3 className="font-display font-bold text-xl sm:text-2xl">{item.title}</h3>
+              <h3 className="font-display font-bold text-xl sm:text-2xl">
+                <AnimatedText text={item.title} />
+              </h3>
               <span className="rounded-full bg-accent text-white text-xs font-semibold px-3 py-1 shrink-0">
-                {item.period}
+                <AnimatedText text={item.period} />
               </span>
             </div>
 
-            <p className="text-accent font-semibold mt-1">{item.place}</p>
-            <p className="text-sm text-ink/60 dark:text-white/60 mt-0.5">{item.type}</p>
+            <p className="text-accent font-semibold mt-1">
+              <AnimatedText text={item.place} />
+            </p>
+            <p className="text-sm text-ink/60 dark:text-white/60 mt-0.5">
+              <AnimatedText text={item.type} />
+            </p>
 
-            {item.detail && <p className="text-sm text-ink/80 dark:text-white/80 mt-4 max-w-2xl">{item.detail}</p>}
+            {item.detail && (
+              <p className="text-sm text-ink/80 dark:text-white/80 mt-4 max-w-2xl">
+                <AnimatedText text={item.detail} />
+              </p>
+            )}
 
             {item.tags && (
               <div className="flex flex-wrap gap-2 mt-4">
@@ -52,7 +63,7 @@ export function EducationCard({ item, index }: EducationCardProps) {
                     key={tag}
                     className="font-pixel text-[1em] uppercase tracking-[0.075em] rounded border border-ink/20 dark:border-white/20 px-2 py-1 text-ink/90 dark:text-white/90"
                   >
-                    {tag}
+                    <AnimatedText text={tag} />
                   </span>
                 ))}
               </div>

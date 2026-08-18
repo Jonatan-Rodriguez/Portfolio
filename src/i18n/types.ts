@@ -29,4 +29,8 @@ export interface Translations {
     downloadCv: string
     toolsTitle: string
   }
+  education: {
+    eyebrow: string
+    title: string
+  }
 }

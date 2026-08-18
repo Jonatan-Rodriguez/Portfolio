@@ -1,7 +1,9 @@
 import type { LucideIcon } from 'lucide-react'
 import { GraduationCap, Code2, BookOpen, Laptop2 } from 'lucide-react'
+import type { Lang } from '../context/LanguageContext'
 
 export interface EducationItem {
+  id: string
   title: string
   place: string
   type: string
@@ -11,8 +13,9 @@ export interface EducationItem {
   icon: LucideIcon
 }
 
-export const education: EducationItem[] = [
+const educationEs: EducationItem[] = [
   {
+    id: 'untref',
     title: 'Ingeniería en Computación',
     place: 'Universidad Nacional de Tres de Febrero (UNTREF)',
     type: 'Carrera universitaria',
@@ -23,6 +26,7 @@ export const education: EducationItem[] = [
     icon: GraduationCap,
   },
   {
+    id: 'udemy-ts',
     title: 'TypeScript',
     place: 'Udemy',
     type: 'Curso',
@@ -31,6 +35,7 @@ export const education: EducationItem[] = [
     icon: Laptop2,
   },
   {
+    id: 'udemy-rn',
     title: 'React Native',
     place: 'Udemy',
     type: 'Curso',
@@ -39,6 +44,7 @@ export const education: EducationItem[] = [
     icon: Laptop2,
   },
   {
+    id: 'henry',
     title: 'Full Stack Web Developer',
     place: 'Henry Bootcamp',
     type: 'Bootcamp',
@@ -48,6 +54,7 @@ export const education: EducationItem[] = [
     icon: Code2,
   },
   {
+    id: 'coderhouse',
     title: 'React JS',
     place: 'CoderHouse',
     type: 'Curso',
@@ -56,3 +63,59 @@ export const education: EducationItem[] = [
     icon: BookOpen,
   },
 ]
+
+const educationEn: EducationItem[] = [
+  {
+    id: 'untref',
+    title: 'Computer Engineering',
+    place: 'National University of Tres de Febrero (UNTREF)',
+    type: 'University Degree',
+    period: 'Feb 2026 — Present',
+    detail:
+      '5-year program focused on the design, development, and maintenance of computer systems, including an intermediate degree as a University Technician in Software Development.',
+    tags: ['Algorithms', 'Data Structures', 'Software Engineering'],
+    icon: GraduationCap,
+  },
+  {
+    id: 'udemy-ts',
+    title: 'TypeScript',
+    place: 'Udemy',
+    type: 'Course',
+    period: 'Jul 2026 — Present',
+    tags: ['TypeScript'],
+    icon: Laptop2,
+  },
+  {
+    id: 'udemy-rn',
+    title: 'React Native',
+    place: 'Udemy',
+    type: 'Course',
+    period: 'Jul 2026 — Present',
+    tags: ['React Native'],
+    icon: Laptop2,
+  },
+  {
+    id: 'henry',
+    title: 'Full Stack Web Developer',
+    place: 'Henry Bootcamp',
+    type: 'Bootcamp',
+    period: 'Jul 2023 — Mar 2024',
+    detail: '800 hours of theoretical and practical coursework focused on the JavaScript ecosystem.',
+    tags: ['React', 'Node.js', 'Express', 'PostgreSQL'],
+    icon: Code2,
+  },
+  {
+    id: 'coderhouse',
+    title: 'React JS',
+    place: 'CoderHouse',
+    type: 'Course',
+    period: 'Jun 2022 - Oct 2022',
+    tags: ['React'],
+    icon: BookOpen,
+  },
+]
+
+export const educationByLang: Record<Lang, EducationItem[]> = {
+  es: educationEs,
+  en: educationEn,
+}
