@@ -46,4 +46,25 @@ export interface Translations {
     eyebrow: string
     title: string
   }
+  contact: {
+    headingPart1: string // "¿Interesado en "
+    headingHighlight: string // "trabajar juntos"
+    headingPart2: string // "?"
+  }
+  contactForm: {
+    nameLabel: string
+    namePlaceholder: string
+    nameError: string
+    emailLabel: string
+    emailPlaceholder: string
+    emailError: string
+    messageLabel: string
+    messagePlaceholder: string
+    messageError: (max: number) => string // Función para inyectar el número dinámico
+    submitSending: string
+    submitReady: string
+    successMsg: string
+    errorMsg: string
+    socialText: string
+  }
 }

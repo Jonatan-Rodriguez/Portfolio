@@ -2,6 +2,8 @@ import { useState, type FormEvent } from 'react'
 import { Send, Loader2 } from 'lucide-react'
 import emailjs from '@emailjs/browser'
 import { isValidName, isValidEmail, isValidMessage, MESSAGE_MAX_LENGTH } from '../../utils/validators'
+import { useLanguage } from '../../context/LanguageContext'
+import { AnimatedText } from '../shared/AnimatedText'
 
 interface ContactFormProps {
   title?: string
@@ -17,6 +19,8 @@ interface FormErrors {
 }
 
 export function ContactForm({ title, subtitle, onSuccess, variant = 'default' }: ContactFormProps) {
+  const { t } = useLanguage()
+  
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
@@ -61,9 +65,9 @@ export function ContactForm({ title, subtitle, onSuccess, variant = 'default' }:
     if (honeypot) return
 
     const nextErrors: FormErrors = {}
-    if (!isValidName(name)) nextErrors.name = 'Ingresá un nombre válido (solo letras, 2 a 60 caracteres).'
-    if (!isValidEmail(email)) nextErrors.email = 'Ingresá un email válido.'
-    if (!isValidMessage(message)) nextErrors.message = `El mensaje debe tener entre 10 y ${MESSAGE_MAX_LENGTH} caracteres.`
+    if (!isValidName(name)) nextErrors.name = t.contactForm.nameError
+    if (!isValidEmail(email)) nextErrors.email = t.contactForm.emailError
+    if (!isValidMessage(message)) nextErrors.message = t.contactForm.messageError(MESSAGE_MAX_LENGTH)
 
     setErrors(nextErrors)
     if (Object.keys(nextErrors).length > 0) {
@@ -121,36 +125,42 @@ export function ContactForm({ title, subtitle, onSuccess, variant = 'default' }:
         />
 
         <div>
-          <label htmlFor="name" className="text-xs font-semibold uppercase tracking-wide text-ink/50 dark:text-white/50">Nombre</label>
+          <label htmlFor="name" className="text-xs font-semibold uppercase tracking-wide text-ink/50 dark:text-white/50">
+            <AnimatedText text={t.contactForm.nameLabel} />
+          </label>
           <input
             id="name"
             type="text"
             value={name}
             onChange={(e) => handleChange('name', e.target.value, isValidName)}
-            placeholder="¿Cómo te llamás?"
+            placeholder={t.contactForm.namePlaceholder}
             className={inputClass(errors.name)}
             disabled={isSubmitting}
           />
-          {errors.name && <p className="text-xs text-red-500 mt-1.5">{errors.name}</p>}
+          {errors.name && <p className="text-xs text-red-500 mt-1.5"><AnimatedText text={errors.name} /></p>}
         </div>
 
         <div>
-          <label htmlFor="email" className="text-xs font-semibold uppercase tracking-wide text-ink/50 dark:text-white/50">Email</label>
+          <label htmlFor="email" className="text-xs font-semibold uppercase tracking-wide text-ink/50 dark:text-white/50">
+            <AnimatedText text={t.contactForm.emailLabel} />
+          </label>
           <input
             id="email"
             type="email"
             value={email}
             onChange={(e) => handleChange('email', e.target.value, isValidEmail)}
-            placeholder="tu@email.com"
+            placeholder={t.contactForm.emailPlaceholder}
             className={inputClass(errors.email)}
             disabled={isSubmitting}
           />
-          {errors.email && <p className="text-xs text-red-500 mt-1.5">{errors.email}</p>}
+          {errors.email && <p className="text-xs text-red-500 mt-1.5"><AnimatedText text={errors.email} /></p>}
         </div>
 
         <div>
           <div className="flex items-baseline justify-between">
-            <label htmlFor="message" className="text-xs font-semibold uppercase tracking-wide text-ink/50 dark:text-white/50">Mensaje</label>
+            <label htmlFor="message" className="text-xs font-semibold uppercase tracking-wide text-ink/50 dark:text-white/50">
+              <AnimatedText text={t.contactForm.messageLabel} />
+            </label>
             <span className="text-xs text-ink/40 dark:text-white/40">
               {message.length}/{MESSAGE_MAX_LENGTH}
             </span>
@@ -161,11 +171,11 @@ export function ContactForm({ title, subtitle, onSuccess, variant = 'default' }:
             onChange={(e) => handleChange('message', e.target.value, isValidMessage)}
             maxLength={MESSAGE_MAX_LENGTH}
             rows={5}
-            placeholder="¿En qué estás pensando?"
+            placeholder={t.contactForm.messagePlaceholder}
             className={`${inputClass(errors.message)} resize-none`}
             disabled={isSubmitting}
           />
-          {errors.message && <p className="text-xs text-red-500 mt-1.5">{errors.message}</p>}
+          {errors.message && <p className="text-xs text-red-500 mt-1.5"><AnimatedText text={errors.message} /></p>}
         </div>
 
         <button
@@ -175,28 +185,39 @@ export function ContactForm({ title, subtitle, onSuccess, variant = 'default' }:
         >
           {isSubmitting ? (
             <>
-              Enviando...
+              <AnimatedText text={t.contactForm.submitSending} />
               <Loader2 size={15} className="animate-spin" />
             </>
           ) : (
             <>
-              Enviar mensaje
+              <AnimatedText text={t.contactForm.submitReady} />
               <Send size={15} />
             </>
           )}
         </button>
 
-        {sent && <p className="text-sm text-green-600 dark:text-green-400 text-center font-medium">¡Mensaje enviado con éxito! Te responderé pronto.</p>}
-        {sendError && <p className="text-sm text-red-500 text-center font-medium">Hubo un problema al enviar. Por favor, intentá de nuevo.</p>}
+        {sent && (
+          <p className="text-sm text-green-600 dark:text-green-400 text-center font-medium">
+            <AnimatedText text={t.contactForm.successMsg} />
+          </p>
+        )}
+        {sendError && (
+          <p className="text-sm text-red-500 text-center font-medium">
+            <AnimatedText text={t.contactForm.errorMsg} />
+          </p>
+        )}
       </form>
 
       {/* Separador y Redes Sociales */}
       <div className="mt-8 pt-6 border-t border-ink/10 dark:border-white/10 flex flex-col items-center gap-5">
         <p className="text-sm font-medium text-ink/60 dark:text-white/60">
-          También puedes contactarme en:
+          <AnimatedText text={t.contactForm.socialText} />
         </p>
+        
+        {/* El bloque <ul> de iconos sociales se mantiene exactamente igual, no necesita traducción */}
         <ul className="flex items-center justify-center">
           {/* GitHub */}
+          {/* ... tu código de GitHub ... */}
           <li className="relative group mx-2">
             <a
               href="https://github.com/Jonatan-Rodriguez"
@@ -223,6 +244,7 @@ export function ContactForm({ title, subtitle, onSuccess, variant = 'default' }:
           </li>
 
           {/* LinkedIn */}
+          {/* ... tu código de LinkedIn ... */}
           <li className="relative group mx-2">
             <a
               href="https://www.linkedin.com/in/jonatan-rodriguez-9b1425260"
