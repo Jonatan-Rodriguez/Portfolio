@@ -1,4 +1,7 @@
+import type { Lang } from '../context/LanguageContext'
+
 export interface Project {
+  id: string
   title: string
   year: string
   color: string
@@ -7,33 +10,76 @@ export interface Project {
   demoUrl: string
   repoUrl: string
 }
-//colores pastel: #e3e1d5, #ff5f5f, #7ec4cf, #b7a2cd, #e8dff5, #ffdcb5
-export const projects: Project[] = [
+
+// Colores pastel: #e3e1d5, #ff5f5f, #7ec4cf, #b7a2cd, #e8dff5, #ffdcb5
+
+const projectsEs: Project[] = [
   {
+    id: 'rick-morty',
     title: 'CRUD Rick and Morty',
     year: '2024',
     color: '#e3e1d5',
     tech: ['React', 'Redux', 'Node.js', 'Express', 'PostgreSQL', 'Sequelize'],
-    image: 'https://jonatan-rodriguez.netlify.app/assets/img/rick-and-morty.png',
+    image: '/img/rick-and-morty.png',
     demoUrl: 'https://rick-and-morty-front-8fqy.onrender.com',
     repoUrl: 'https://github.com/Jonatan-Rodriguez/rick_and_morty',
   },
   {
+    id: 'portfolio',
     title: 'Sitio Web Personal',
     year: '2025',
     color: '#ffdcb5',
     tech: ['HTML', 'CSS', 'Sass', 'JavaScript'],
-    image: 'https://jonatan-rodriguez.netlify.app/assets/img/portafolio.png',
+    image: '/img/portafolio.png',
     demoUrl: 'https://jonatanrodriguez.com.ar',
     repoUrl: 'https://github.com/Jonatan-Rodriguez/Portafolio',
   },
   {
+    id: 'landing-cafe',
     title: 'Landing Cafetería',
     year: '2022',
     color: '#e8dff5',
     tech: ['HTML', 'CSS', 'JavaScript'],
-    image: 'https://jonatan-rodriguez.netlify.app/assets/img/Latte%20Art.png',
+    image: '/img/latte-art.png',
     demoUrl: 'https://latte-arte.netlify.app',
     repoUrl: 'https://github.com/Jonatan-Rodriguez/cafeteria-landing-page',
   },
 ]
+
+const projectsEn: Project[] = [
+  {
+    id: 'rick-morty',
+    title: 'Rick and Morty CRUD',
+    year: '2024',
+    color: '#e3e1d5',
+    tech: ['React', 'Redux', 'Node.js', 'Express', 'PostgreSQL', 'Sequelize'],
+    image: '/img/rick-and-morty.png',
+    demoUrl: 'https://rick-and-morty-front-8fqy.onrender.com',
+    repoUrl: 'https://github.com/Jonatan-Rodriguez/rick_and_morty',
+  },
+  {
+    id: 'portfolio',
+    title: 'Personal Website',
+    year: '2025',
+    color: '#ffdcb5',
+    tech: ['HTML', 'CSS', 'Sass', 'JavaScript'],
+    image: '/img/portafolio.png',
+    demoUrl: 'https://jonatanrodriguez.com.ar',
+    repoUrl: 'https://github.com/Jonatan-Rodriguez/Portafolio',
+  },
+  {
+    id: 'landing-cafe',
+    title: 'Coffee Shop Landing',
+    year: '2022',
+    color: '#e8dff5',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    image: '/img/latte-art.png',
+    demoUrl: 'https://latte-arte.netlify.app',
+    repoUrl: 'https://github.com/Jonatan-Rodriguez/cafeteria-landing-page',
+  },
+]
+
+export const projectsByLang: Record<Lang, Project[]> = {
+  es: projectsEs,
+  en: projectsEn,
+}

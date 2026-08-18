@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion'
 import type { Project } from '../../data/projects'
+import { AnimatedText } from '../shared/AnimatedText' // Ajusta el path
+import { useLanguage } from '../../context/LanguageContext'
 
 interface ProjectCardProps {
   project: Project
@@ -7,6 +9,8 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
+  const { t } = useLanguage()
+
   return (
     <div className={index === 1 ? 'sm:mt-16' : ''}>
       <div className="flex flex-col items-center">
@@ -25,11 +29,13 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       >
         <div className="flex items-center justify-between">
           <span className="w-6 h-px bg-ink/50" />
-          <span className="text-xs font-semibold bg-paper/70 rounded-full px-3 py-1 text-ink">{project.year}</span>
+          <span className="text-xs font-semibold bg-paper/70 rounded-full px-3 py-1 text-ink">
+            <AnimatedText text={project.year} />
+          </span>
         </div>
 
         <h3 className="font-display font-extrabold text-3xl sm:text-4xl leading-[0.95] text-ink mt-6">
-          {project.title}
+          <AnimatedText text={project.title} />
         </h3>
 
         <div className="flex flex-wrap gap-1.5 mt-4">
@@ -54,7 +60,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             rel="noreferrer"
             className="flex-1 text-center rounded-full bg-paper text-ink text-sm font-bold px-4 py-2.5 hover:opacity-80 transition-opacity"
           >
-            Ver Demo
+            <AnimatedText text={t.work.demoBtn} />
           </a>
           
           <a
@@ -63,7 +69,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             rel="noreferrer"
             className="flex-1 text-center rounded-full bg-ink text-paper text-sm font-bold px-4 py-2.5 hover:opacity-80 transition-opacity"
           >
-            Código
+            <AnimatedText text={t.work.repoBtn} />
           </a>
         </div>
       </motion.div>

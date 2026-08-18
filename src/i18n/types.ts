@@ -33,4 +33,13 @@ export interface Translations {
     eyebrow: string
     title: string
   }
+  work: {
+    eyebrow: string
+    title: string
+    desc1: string
+    highlight: string
+    desc2: string
+    demoBtn: string
+    repoBtn: string
+  }
 }

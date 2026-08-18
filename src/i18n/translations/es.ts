@@ -35,4 +35,13 @@ export const es: Translations = {
     eyebrow: 'Mi camino',
     title: 'Formación',
   },
+  work: {
+    eyebrow: 'Mi portafolio',
+    title: 'Proyectos',
+    desc1: 'Proyectos con los que practiqué y afiancé el stack ',
+    highlight: 'PERN',
+    desc2: ', desde una landing simple hasta un CRUD completo con autenticación y base de datos.',
+    demoBtn: 'Ver Demo',
+    repoBtn: 'Código',
+  },
 }
