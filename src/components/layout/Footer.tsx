@@ -1,8 +1,11 @@
 import { Heart } from 'lucide-react'
 import { CoffeeMug } from '../contact/CoffeeMug'
+import { useLanguage } from '../../context/LanguageContext'
+import { AnimatedText } from '../shared/AnimatedText'
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   return (
     <footer className="px-6 pb-8">
@@ -21,15 +24,18 @@ export function Footer() {
             <p className="font-display font-bold text-2xl sm:text-3xl">
               &lt;Jona<span className="text-accent">/</span>&gt;
             </p>
-            <p className="text-sm text-ink/60 dark:text-paper/60 text-center sm:text-left">
-              © {currentYear} Jona. Todos los derechos reservados.
-            </p>
+            <div className="text-sm text-ink/60 dark:text-paper/60 text-center sm:text-left flex flex-wrap gap-1 justify-center sm:justify-start">
+              <span>© {currentYear} Jona.</span>
+              <AnimatedText text={t.footer.rights} />
+            </div>
           </div>
 
           {/* Centro */}
           <div className="flex justify-center w-full sm:w-1/3 text-sm text-ink/60 dark:text-paper/60">
             <p className="flex items-center gap-1.5">
-              Hecho con <Heart size={13} className="text-accent fill-accent" /> por Jona
+              <AnimatedText text={t.footer.madeWith} /> 
+              <Heart size={13} className="text-accent fill-accent" /> 
+              <AnimatedText text={t.footer.by} />
             </p>
           </div>
 

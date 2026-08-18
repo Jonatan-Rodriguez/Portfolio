@@ -33,9 +33,9 @@ export function ContactForm({ title, subtitle, onSuccess, variant = 'default' }:
   const isModal = variant === 'modal'
 
   const wrapperClasses = isModal
-    ? "w-full"
+    ? "w-full max-h-[80vh] overflow-y-auto overflow-x-hidden px-2 pb-4"
     : "w-full mt-12 rounded-2xl bg-[#f7ede2] dark:bg-[#111111] text-ink dark:text-white p-6 sm:p-8 border border-ink/5 dark:border-white/20 shadow-lg shadow-ink/10 dark:shadow-2xl dark:shadow-accent/10"
-
+    
   const inputClass = (hasError?: string) => {
     const base = "mt-1.5 w-full rounded-xl border bg-transparent px-4 py-3 text-sm text-ink dark:text-white placeholder:text-ink/40 dark:placeholder:text-white/40 focus:outline-none transition-colors"
     const borderColors = hasError

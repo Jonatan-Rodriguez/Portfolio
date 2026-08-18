@@ -67,4 +67,9 @@ export interface Translations {
     errorMsg: string
     socialText: string
   }
+  footer: {
+    rights: string
+    madeWith: string
+    by: string
+  }
 }

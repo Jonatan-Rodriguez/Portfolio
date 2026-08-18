@@ -69,4 +69,9 @@ export const en: Translations = {
     errorMsg: 'There was a problem sending the message. Please try again.',
     socialText: 'You can also reach me on:',
   },
+  footer: {
+    rights: 'All rights reserved.',
+    madeWith: 'Made with',
+    by: 'by Jona',
+  },
 }
