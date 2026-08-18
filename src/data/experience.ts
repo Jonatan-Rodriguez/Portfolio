@@ -1,7 +1,9 @@
 import type { LucideIcon } from 'lucide-react'
 import { TrendingUp, ShieldCheck, Megaphone, Package } from 'lucide-react'
+import type { Lang } from '../context/LanguageContext'
 
 export interface ExperienceItem {
+  id: string // <- Agregamos ID para usar como key segura
   role: string
   company: string
   location: string
@@ -12,8 +14,9 @@ export interface ExperienceItem {
   icon: LucideIcon
 }
 
-export const experience: ExperienceItem[] = [
+const experienceEs: ExperienceItem[] = [
   {
+    id: 'innova',
     role: 'Ejecutivo de Ventas',
     company: 'Innova',
     location: 'Argentina',
@@ -25,6 +28,7 @@ export const experience: ExperienceItem[] = [
     icon: TrendingUp,
   },
   {
+    id: 'thames',
     role: 'Asesor de Seguro',
     company: 'Estudio Jurídico Thames',
     location: 'Argentina',
@@ -36,6 +40,7 @@ export const experience: ExperienceItem[] = [
     icon: ShieldCheck,
   },
   {
+    id: 'telecentro',
     role: 'Promotor',
     company: 'Telecentro',
     location: 'Argentina',
@@ -47,6 +52,7 @@ export const experience: ExperienceItem[] = [
     icon: Megaphone,
   },
   {
+    id: 'montecarlos',
     role: 'Encargado de Depósito',
     company: 'Mueblería Montecarlos Hogar',
     location: 'Argentina',
@@ -57,3 +63,58 @@ export const experience: ExperienceItem[] = [
     icon: Package,
   },
 ]
+
+const experienceEn: ExperienceItem[] = [
+  {
+    id: 'innova',
+    role: 'Sales Executive',
+    company: 'Innova',
+    location: 'Argentina',
+    modality: 'Full-time · Remote',
+    period: 'Aug 2025 — Oct 2025',
+    description:
+      'Responsible for commercial management and closing sales through digital channels. Managed automated chat flows, advised on plans and coverages, and tracked the full sales cycle.',
+    tags: ['WhatsApp Business', 'ManyChat', 'Sales'],
+    icon: TrendingUp,
+  },
+  {
+    id: 'thames',
+    role: 'Insurance Advisor',
+    company: 'Estudio Jurídico Thames',
+    location: 'Argentina',
+    modality: 'Full-time · Remote',
+    period: 'Jul 2024 — Aug 2025',
+    description:
+      'Insurance management and advisory with direct customer support. Developed and maintained the firm\'s website and internal applications, and optimized processes through automation.',
+    tags: ['Web Development', 'Automation', 'Customer Support'],
+    icon: ShieldCheck,
+  },
+  {
+    id: 'telecentro',
+    role: 'Promoter',
+    company: 'Telecentro',
+    location: 'Argentina',
+    modality: 'Full-time · On-site',
+    period: 'Apr 2021 — Jul 2021',
+    description:
+      'Promotion of telecommunications services and distribution of promotional material, providing information and guidance to clients in assigned tracking areas.',
+    tags: ['Sales', 'Customer Support'],
+    icon: Megaphone,
+  },
+  {
+    id: 'montecarlos',
+    role: 'Warehouse Manager',
+    company: 'Mueblería Montecarlos Hogar',
+    location: 'Argentina',
+    modality: 'Full-time · On-site',
+    period: 'Jan 2021 — Apr 2021',
+    description: 'Warehouse management: furniture assembly and delivery, inventory control and organization.',
+    tags: ['Logistics', 'Organization'],
+    icon: Package,
+  },
+]
+
+export const experienceByLang: Record<Lang, ExperienceItem[]> = {
+  es: experienceEs,
+  en: experienceEn,
+}

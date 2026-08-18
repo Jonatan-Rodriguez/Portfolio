@@ -42,4 +42,8 @@ export interface Translations {
     demoBtn: string
     repoBtn: string
   }
+  experience: {
+    eyebrow: string
+    title: string
+  }
 }

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import type { ExperienceItem } from '../../data/experience'
+import { AnimatedText } from '../shared/AnimatedText'
 
 interface ExperienceCardProps {
   item: ExperienceItem
@@ -34,18 +35,27 @@ export function ExperienceCard({ item, index }: ExperienceCardProps) {
 
           <div className="flex-1 min-w-0">
             <div className="flex flex-wrap items-center justify-between gap-2">
-              <h3 className="font-display font-bold text-xl sm:text-2xl">{item.role}</h3>
+              <h3 className="font-display font-bold text-xl sm:text-2xl">
+                <AnimatedText text={item.role} />
+              </h3>
               <span className="rounded-full bg-accent text-white text-xs font-semibold px-3 py-1 shrink-0">
-                {item.period}
+                <AnimatedText text={item.period} />
               </span>
             </div>
 
             <p className="text-accent font-semibold mt-1">
-              {item.company} <span className="text-ink/50 dark:text-white/50 font-normal">· {item.location}</span>
+              <AnimatedText text={item.company} /> 
+              <span className="text-ink/50 dark:text-white/50 font-normal">
+                {' '}· <AnimatedText text={item.location} />
+              </span>
             </p>
-            <p className="text-sm text-ink/60 dark:text-white/60 mt-0.5">{item.modality}</p>
+            <p className="text-sm text-ink/60 dark:text-white/60 mt-0.5">
+              <AnimatedText text={item.modality} />
+            </p>
 
-            <p className="text-sm text-ink/80 dark:text-white/80 mt-4 max-w-2xl">{item.description}</p>
+            <p className="text-sm text-ink/80 dark:text-white/80 mt-4 max-w-2xl">
+              <AnimatedText text={item.description} />
+            </p>
 
             {item.tags && (
               <div className="flex flex-wrap gap-2 mt-4">
@@ -54,7 +64,7 @@ export function ExperienceCard({ item, index }: ExperienceCardProps) {
                     key={tag}
                     className="font-pixel text-[1em] uppercase tracking-[0.075em] rounded border border-ink/20 dark:border-white/20 px-2 py-1 text-ink/90 dark:text-white/90"
                   >
-                    {tag}
+                    <AnimatedText text={tag} />
                   </span>
                 ))}
               </div>

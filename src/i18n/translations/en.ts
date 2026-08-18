@@ -44,4 +44,8 @@ export const en: Translations = {
     demoBtn: 'Live Demo',
     repoBtn: 'Code',
   },
+  experience: {
+    eyebrow: 'My journey',
+    title: 'Experience',
+  },
 }
