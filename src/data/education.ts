@@ -1,5 +1,5 @@
 import type { LucideIcon } from 'lucide-react'
-import { GraduationCap, Code2, BookOpen, Laptop2 } from 'lucide-react'
+import { GraduationCap, Code2, BookOpen, Laptop2, Database } from 'lucide-react'
 import type { Lang } from '../context/LanguageContext'
 
 export interface EducationItem {
@@ -24,6 +24,17 @@ const educationEs: EducationItem[] = [
       'Formación de 5 años orientada al diseño, desarrollo y mantenimiento de sistemas informáticos, con título intermedio de Técnico Universitario en Desarrollo de Software.',
     tags: ['Algoritmos', 'Estructuras de Datos', 'Ingeniería de Software'],
     icon: GraduationCap,
+  },
+  {
+    id: 'uba-datos',
+    title: 'Diplomatura en Programación y Análisis de Datos',
+    place: 'UBA EXACTAS / Gobierno de la Provincia de Bs. As.',
+    type: 'Diplomatura',
+    period: 'Ago 2026 — Actualidad',
+    detail:
+      'Formación orientada al pensamiento computacional y manejo masivo de datos con Python. Abarca obtención, procesamiento, limpieza y visualización (Pandas, Seaborn), aplicando estadística descriptiva y manejo de APIs para la resolución de problemáticas reales.',
+    tags: ['Python', 'Pandas', 'Análisis de Datos', 'Estadística'],
+    icon: Database, // o el ícono que prefieras
   },
   {
     id: 'udemy-ts',
@@ -75,6 +86,17 @@ const educationEn: EducationItem[] = [
       '5-year program focused on the design, development, and maintenance of computer systems, including an intermediate degree as a University Technician in Software Development.',
     tags: ['Algorithms', 'Data Structures', 'Software Engineering'],
     icon: GraduationCap,
+  },
+  {
+    id: 'uba-datos',
+    title: 'Diploma in Programming and Data Analysis',
+    place: 'UBA EXACTAS / Gov. of Buenos Aires Province',
+    type: 'Diploma',
+    period: 'Aug 2026 — Present',
+    detail:
+      'Training focused on computational thinking and massive data management with Python. Covers data collection, processing, cleaning, and visualization (Pandas, Seaborn), applying descriptive statistics and APIs to solve real-world problems.',
+    tags: ['Python', 'Pandas', 'Data Analysis', 'Statistics'],
+    icon: Database,
   },
   {
     id: 'udemy-ts',
