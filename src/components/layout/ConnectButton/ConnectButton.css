@@ -1,4 +1,3 @@
-/* ConnectButton.css */
 .connect-btn {
   --line_color: theme('colors.ink');
   --back_color: theme('colors.accent');

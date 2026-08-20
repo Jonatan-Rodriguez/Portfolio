@@ -47,9 +47,9 @@ export interface Translations {
     title: string
   }
   contact: {
-    headingPart1: string // "¿Interesado en "
-    headingHighlight: string // "trabajar juntos"
-    headingPart2: string // "?"
+    headingPart1: string
+    headingHighlight: string
+    headingPart2: string
   }
   contactForm: {
     nameLabel: string
@@ -60,7 +60,7 @@ export interface Translations {
     emailError: string
     messageLabel: string
     messagePlaceholder: string
-    messageError: (max: number) => string // Función para inyectar el número dinámico
+    messageError: (max: number) => string
     submitSending: string
     submitReady: string
     successMsg: string

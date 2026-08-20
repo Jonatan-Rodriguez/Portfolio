@@ -214,10 +214,8 @@ export function ContactForm({ title, subtitle, onSuccess, variant = 'default' }:
           <AnimatedText text={t.contactForm.socialText} />
         </p>
         
-        {/* El bloque <ul> de iconos sociales se mantiene exactamente igual, no necesita traducción */}
         <ul className="flex items-center justify-center">
           {/* GitHub */}
-          {/* ... tu código de GitHub ... */}
           <li className="relative group mx-2">
             <a
               href="https://github.com/Jonatan-Rodriguez"
@@ -244,7 +242,6 @@ export function ContactForm({ title, subtitle, onSuccess, variant = 'default' }:
           </li>
 
           {/* LinkedIn */}
-          {/* ... tu código de LinkedIn ... */}
           <li className="relative group mx-2">
             <a
               href="https://www.linkedin.com/in/jonatan-rodriguez-9b1425260"
