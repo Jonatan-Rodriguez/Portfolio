@@ -15,6 +15,16 @@ export interface Project {
 
 const projectsEs: Project[] = [
   {
+    id: 'portfolio',
+    title: 'Sitio Web Personal',
+    year: '2025',
+    color: '#ffdcb5',
+    tech: ['React', 'TypeScript', 'Tailwind'],
+    image: '/img/portafolio.png',
+    demoUrl: 'https://jonatan-rodriguez.netlify.app/',
+    repoUrl: 'https://github.com/Jonatan-Rodriguez/Portfolio.git',
+  },
+  {
     id: 'rick-morty',
     title: 'CRUD Rick and Morty',
     year: '2024',
@@ -23,16 +33,6 @@ const projectsEs: Project[] = [
     image: '/img/rick-and-morty.png',
     demoUrl: 'https://rick-and-morty-front-8fqy.onrender.com',
     repoUrl: 'https://github.com/Jonatan-Rodriguez/rick_and_morty',
-  },
-  {
-    id: 'portfolio',
-    title: 'Sitio Web Personal',
-    year: '2025',
-    color: '#ffdcb5',
-    tech: ['HTML', 'CSS', 'Sass', 'JavaScript'],
-    image: '/img/portafolio.png',
-    demoUrl: 'https://jonatanrodriguez.com.ar',
-    repoUrl: 'https://github.com/Jonatan-Rodriguez/Portafolio',
   },
   {
     id: 'landing-cafe',
@@ -48,6 +48,16 @@ const projectsEs: Project[] = [
 
 const projectsEn: Project[] = [
   {
+    id: 'portfolio',
+    title: 'Personal Website',
+    year: '2025',
+    color: '#ffdcb5',
+    tech: ['React', 'TypeScript', 'Tailwind'],
+    image: '/img/portafolio.png',
+    demoUrl: 'https://jonatan-rodriguez.netlify.app/',
+    repoUrl: 'https://github.com/Jonatan-Rodriguez/Portfolio.git',
+  },
+  {
     id: 'rick-morty',
     title: 'Rick and Morty CRUD',
     year: '2024',
@@ -56,16 +66,6 @@ const projectsEn: Project[] = [
     image: '/img/rick-and-morty.png',
     demoUrl: 'https://rick-and-morty-front-8fqy.onrender.com',
     repoUrl: 'https://github.com/Jonatan-Rodriguez/rick_and_morty',
-  },
-  {
-    id: 'portfolio',
-    title: 'Personal Website',
-    year: '2025',
-    color: '#ffdcb5',
-    tech: ['HTML', 'CSS', 'Sass', 'JavaScript'],
-    image: '/img/portafolio.png',
-    demoUrl: 'https://jonatanrodriguez.com.ar',
-    repoUrl: 'https://github.com/Jonatan-Rodriguez/Portafolio',
   },
   {
     id: 'landing-cafe',
