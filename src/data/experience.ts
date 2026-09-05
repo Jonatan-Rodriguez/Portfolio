@@ -1,9 +1,9 @@
 import type { LucideIcon } from 'lucide-react'
-import { TrendingUp, ShieldCheck, Megaphone, Package } from 'lucide-react'
+import { TrendingUp, ShieldCheck, Code, Laptop } from 'lucide-react'
 import type { Lang } from '../context/LanguageContext'
 
 export interface ExperienceItem {
-  id: string // <- Agregamos ID para usar como key segura
+  id: string 
   role: string
   company: string
   location: string
@@ -16,14 +16,35 @@ export interface ExperienceItem {
 
 const experienceEs: ExperienceItem[] = [
   {
+    id: 'desarrollador Web Freelance',
+    role: 'Profesional Independiente',
+    company: 'Desarrollador Web Freelance',
+    location: 'Argentina',
+    modality: 'Medio tiempo · Remoto',
+    period: 'Abr 2026 — actualidad',
+    description: 'Desarrollo y mantenimiento de aplicaciones web a medida. Especializado en diseño responsive, resolución de bugs y refactorización de código.',
+    tags: ['Diseño Responsive', 'Resolución de Bugs', 'Refactorización'],
+    icon: Laptop,
+  },
+  {
+    id: 'desarrollador Front-End',
+    role: 'Desarrollador Front-End',
+    company: 'DevTech Solutions',
+    location: 'Argentina',
+    modality: 'Tiempo completo · Remoto',
+    period: 'Oct 2025 — May 2026',
+    description: 'Participación en el ciclo completo de desarrollo bajo metodologías ágiles (Scrum). Creación de componentes reutilizables, optimización de rendimiento y control de versiones con Git/GitHub.',
+    tags: ['Scrum', 'Git/GitHub', 'Optimización'],
+    icon: Code,
+  },
+  {
     id: 'innova',
     role: 'Ejecutivo de Ventas',
     company: 'Innova',
     location: 'Argentina',
     modality: 'Tiempo completo · Remoto',
     period: 'Ago 2025 — Oct 2025',
-    description:
-      'Responsable de la gestión comercial y cierre de ventas por canales digitales. Gestioné flujos de chat automatizados, asesoré sobre planes y coberturas, y seguí el ciclo completo de ventas.',
+    description:'Responsable de la gestión comercial y cierre de ventas por canales digitales. Gestioné flujos de chat automatizados, asesoré sobre planes y coberturas, y seguí el ciclo completo de ventas.',
     tags: ['WhatsApp Business', 'ManyChat', 'Ventas'],
     icon: TrendingUp,
   },
@@ -34,37 +55,35 @@ const experienceEs: ExperienceItem[] = [
     location: 'Argentina',
     modality: 'Tiempo completo · Remoto',
     period: 'Jul 2024 — Ago 2025',
-    description:
-      'Gestión y asesoramiento en seguros con soporte directo a clientes. Desarrollé y mantuve la página web y aplicaciones internas del estudio, y optimicé procesos mediante automatización.',
+    description:'Gestión y asesoramiento en seguros con soporte directo a clientes. Desarrollé y mantuve la página web y aplicaciones internas del estudio, y optimicé procesos mediante automatización.',
     tags: ['Desarrollo Web', 'Automatización', 'Atención al cliente'],
     icon: ShieldCheck,
-  },
-  {
-    id: 'telecentro',
-    role: 'Promotor',
-    company: 'Telecentro',
-    location: 'Argentina',
-    modality: 'Tiempo completo · Presencial',
-    period: 'Abr 2021 — Jul 2021',
-    description:
-      'Difusión de servicios de telecomunicaciones y distribución de material promocional, con información y orientación a clientes en el seguimiento de zonas asignadas.',
-    tags: ['Ventas', 'Atención al cliente'],
-    icon: Megaphone,
-  },
-  {
-    id: 'montecarlos',
-    role: 'Encargado de Depósito',
-    company: 'Mueblería Montecarlos Hogar',
-    location: 'Argentina',
-    modality: 'Tiempo completo · Presencial',
-    period: 'Ene 2021 — Abr 2021',
-    description: 'Gestión del almacén: armado y entrega de muebles, control y organización de stock.',
-    tags: ['Logística', 'Organización'],
-    icon: Package,
   },
 ]
 
 const experienceEn: ExperienceItem[] = [
+  {
+    id: 'desarrollador Web Freelance',
+    role: 'Independent Professional',
+    company: 'Freelance Web Developer',
+    location: 'Argentina',
+    modality: 'Part-time · Remote',
+    period: 'Apr 2026 — present',
+    description: 'Development and maintenance of custom web applications. Specialized in responsive design, bug fixing, and code refactoring.',
+    tags: ['Responsive Design', 'Bug Fixing', 'Refactoring'],
+    icon: Laptop,
+  },
+  {
+    id: 'desarrollador Front-End',
+    role: 'Front-End Developer',
+    company: 'DevTech Solutions',
+    location: 'Argentina',
+    modality: 'Full-time · Remote',
+    period: 'Oct 2025 — May 2026',
+    description: 'Participation in the full development cycle under agile methodologies (Scrum). Creation of reusable components, performance optimization, and version control with Git/GitHub.',
+    tags: ['Scrum', 'Git/GitHub', 'Optimization'],
+    icon: Code,
+  },
   {
     id: 'innova',
     role: 'Sales Executive',
@@ -72,8 +91,7 @@ const experienceEn: ExperienceItem[] = [
     location: 'Argentina',
     modality: 'Full-time · Remote',
     period: 'Aug 2025 — Oct 2025',
-    description:
-      'Responsible for commercial management and closing sales through digital channels. Managed automated chat flows, advised on plans and coverages, and tracked the full sales cycle.',
+    description:'Responsible for commercial management and closing sales through digital channels. Managed automated chat flows, advised on plans and coverages, and tracked the full sales cycle.',
     tags: ['WhatsApp Business', 'ManyChat', 'Sales'],
     icon: TrendingUp,
   },
@@ -84,33 +102,9 @@ const experienceEn: ExperienceItem[] = [
     location: 'Argentina',
     modality: 'Full-time · Remote',
     period: 'Jul 2024 — Aug 2025',
-    description:
-      'Insurance management and advisory with direct customer support. Developed and maintained the firm\'s website and internal applications, and optimized processes through automation.',
+    description:'Insurance management and advisory with direct customer support. Developed and maintained the firm\'s website and internal applications, and optimized processes through automation.',
     tags: ['Web Development', 'Automation', 'Customer Support'],
     icon: ShieldCheck,
-  },
-  {
-    id: 'telecentro',
-    role: 'Promoter',
-    company: 'Telecentro',
-    location: 'Argentina',
-    modality: 'Full-time · On-site',
-    period: 'Apr 2021 — Jul 2021',
-    description:
-      'Promotion of telecommunications services and distribution of promotional material, providing information and guidance to clients in assigned tracking areas.',
-    tags: ['Sales', 'Customer Support'],
-    icon: Megaphone,
-  },
-  {
-    id: 'montecarlos',
-    role: 'Warehouse Manager',
-    company: 'Mueblería Montecarlos Hogar',
-    location: 'Argentina',
-    modality: 'Full-time · On-site',
-    period: 'Jan 2021 — Apr 2021',
-    description: 'Warehouse management: furniture assembly and delivery, inventory control and organization.',
-    tags: ['Logistics', 'Organization'],
-    icon: Package,
   },
 ]
 
