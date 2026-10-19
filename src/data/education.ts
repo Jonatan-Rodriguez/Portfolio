@@ -1,5 +1,5 @@
 import type { LucideIcon } from 'lucide-react'
-import { GraduationCap, Code2, BookOpen, Laptop2, Database } from 'lucide-react'
+import { GraduationCap, Code2, BookOpen, Laptop2, Code, Layout } from 'lucide-react'
 import type { Lang } from '../context/LanguageContext'
 
 export interface EducationItem {
@@ -23,16 +23,6 @@ const educationEs: EducationItem[] = [
     detail:'Formación enfocada en el diseño, desarrollo y mantenimiento de sistemas y redes, incluyendo el título intermedio de Técnico Universitario en Desarrollo de Software.',
     tags: ['Algoritmos', 'Estructuras de Datos', 'Ingeniería de Software'],
     icon: GraduationCap,
-  },
-  {
-    id: 'uba-datos',
-    title: 'Diplomatura en Programación y Análisis de Datos',
-    place: 'UBA EXACTAS / Gobierno de la Provincia de Bs. As.',
-    type: 'Diplomatura',
-    period: 'Ago 2026 — Actualidad',
-    detail:'Análisis de datos con Python (Pandas, Seaborn) y APIs. Resolución de problemas mediante estadística descriptiva, limpieza y visualización de información.',
-    tags: ['Python', 'Pandas', 'Análisis de Datos', 'Estadística'],
-    icon: Database,
   },
   {
     id: 'udemy-ts',
@@ -59,10 +49,30 @@ const educationEs: EducationItem[] = [
     title: 'React JS',
     place: 'CoderHouse',
     type: 'Curso',
-    period: 'Jun 2022 - Oct 2022',
+    period: 'Sep 2022 - Nov 2022',
     detail: 'Desarrollo de interfaces de usuario interactivas, manejo de estado global y consumo de APIs.',
     tags: ['React'],
     icon: BookOpen,
+  },
+  {
+    id: 'coderhouse-js',
+    title: 'JavaScript',
+    place: 'CoderHouse',
+    type: 'Curso',
+    period: 'Jun 2022 - Ago 2022',
+    detail: 'Profundización en el lenguaje JavaScript. Manipulación del DOM, programación asincrónica, uso de promesas, consumo de APIs y lógica de programación compleja.',
+    tags: ['JavaScript'],
+    icon: Code,
+  },
+  {
+    id: 'coderhouse-web',
+    title: 'Desarrollo Web',
+    place: 'CoderHouse',
+    type: 'Curso',
+    period: 'Abr 2022 - Jun 2022',
+    detail: 'Fundamentos del desarrollo web. Maquetado de sitios estáticos y responsive empleando HTML y CSS, junto con una introducción a la interactividad mediante JavaScript.',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    icon: Layout, 
   },
 ]
 
@@ -76,16 +86,6 @@ const educationEn: EducationItem[] = [
     detail: 'Education focused on the design, development, and maintenance of systems and networks, including an intermediate degree as a University Technician in Software Development.',
     tags: ['Algorithms', 'Data Structures', 'Software Engineering'],
     icon: GraduationCap,
-  },
-  {
-    id: 'uba-datos',
-    title: 'Diploma in Programming and Data Analysis',
-    place: 'UBA EXACTAS / Gov. of Buenos Aires Province',
-    type: 'Diploma',
-    period: 'Aug 2026 — Present',
-    detail: 'Data analysis with Python (Pandas, Seaborn) and APIs. Problem-solving through descriptive statistics, data cleaning, and information visualization.',
-    tags: ['Python', 'Pandas', 'Data Analysis', 'Statistics'],
-    icon: Database,
   },
   {
     id: 'udemy-ts',
@@ -112,10 +112,30 @@ const educationEn: EducationItem[] = [
     title: 'React JS',
     place: 'CoderHouse',
     type: 'Course',
-    period: 'Jun 2022 - Oct 2022',
+    period: 'Sep 2022 - Nov 2022',
     detail: 'Development of interactive user interfaces, global state management, and API consumption.',
     tags: ['React'],
     icon: BookOpen,
+  },
+  {
+    id: 'coderhouse-js',
+    title: 'JavaScript',
+    place: 'CoderHouse',
+    type: 'Course',
+    period: 'Jun 2022 - Ago 2022',
+    detail: 'Advanced JavaScript concepts. DOM manipulation, asynchronous programming, promises, API consumption, and complex programming logic.',
+    tags: ['JavaScript'],
+    icon: Code,
+  },
+  {
+    id: 'coderhouse-web',
+    title: 'Web Development',
+    place: 'CoderHouse',
+    type: 'Course',
+    period: 'Abr 2022 - Jun 2022',
+    detail: 'Fundamentals of web development. Building static and responsive websites using HTML and CSS, along with an introduction to interactivity through JavaScript.',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    icon: Layout,
   },
 ]
 
